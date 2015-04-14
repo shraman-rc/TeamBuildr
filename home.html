@@ -33,7 +33,6 @@ body{
 
 <body>
 
-
 <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
 <!---====================================================================================================================-->
@@ -212,7 +211,7 @@ body{
                         <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
-                        <td>{{player.rating}}</td>
+                        <td><span class="stars">{{player.rating}}</span></td>
                         <td>{{player.gpa}}</td>
                         <td>{{player.sat}}</td>
                     </tr>
@@ -227,9 +226,18 @@ body{
 
 
 
+<!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
 
-
-
+<script type="text/javascript">
+$.fn.stars = function() {
+    return $(this).each(function() {
+        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+    });
+}
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 
 
 
