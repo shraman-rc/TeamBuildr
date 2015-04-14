@@ -8,11 +8,11 @@ angular.module('teambuildrApp', [])
     // });
 
     $scope.addPlayer = function(player) {
-      playerList.players.push(player);
+      $scope.players.push(player);
     };
 
     $scope.removePlayer = function(player) {
-      playerList.players.remove(player);
+      $scope.players.remove(player);
     };
 
     // inspired by http://stackoverflow.com/questions/1129216/sorting-objects-in-an-array-by-a-field-value-in-javascript
@@ -29,11 +29,22 @@ angular.module('teambuildrApp', [])
     };
 
     $scope.checkAll = function() {
-      for (var i=0; i<playerList.players.length; i++)
-        playerList.players[i].checkmark = playerList.allChecked;
+      for (var i=0; i<$scope.players.length; i++)
+        $scope.players[i].checkmark = $scope.allChecked;
     };
 
+    $scope.check = function(p) {
+      $scope.allChecked = true;
+
+      for (var i=0; i<$scope.players.length; i++) {
+        if(!$scope.players[i].checkmark)
+          $scope.allChecked = false;
+      }
+    }
+
+
     $scope.allChecked = false;
+
 
   });
 
