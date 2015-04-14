@@ -33,7 +33,9 @@ body{
 </head>
 
 <body>
-
+        <div ng-app="playerApp" class="row">
+        <!-- <div class="row"> -->
+            <div ng-controller="PlayerController">
 
 <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
@@ -64,7 +66,7 @@ body{
 <!---====================================================================================================================-->
 
 
-                    <li><a href="#" data-toggle="modal" class="special" id="email" data-target="#emailModal">Email Selected Players</a>
+          <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
 
 
             <form onSubmit=""><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
@@ -74,19 +76,21 @@ body{
                            <h2 class="modal-title" id="myModalLabel">Email Selected Players</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
                         </div>
-                        
+
                         <div class="modal-body" id="email_form">
 
-                              <div id="mail_to">Mail to: <input type="text" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
+                              <div id="mail_to">Mail to: <input type="text" class="form-control inp" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
                               <hr>
         
-                              <div id="subject_for" for="subject">Subject: <input type="text" name="subject" id="subject" placeholder="subject"></br></div>
+                              <div id="subject_for" for="subject">Subject: <input type="text" class="form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
+
                               <hr>
-        
+
                               <div for="message">Message:</div>
                               <hr>
 
-                              <textarea type="text" name="message" id="message" placeholder="body"></textarea></br>
+
+                              <textarea type="text" class="form-control" name="message" id="message" placeholder="body"></textarea></br>
                                  
                               <input type="submit" name="submit" class="signupbutton button2 btn-large" id="send_btn" value="Send!" />
 
@@ -123,37 +127,48 @@ body{
 <!---====================================================================================================================-->
 <!-- ADD PLAYERS
 <!---====================================================================================================================-->
-      <a href="#" data-target="#addModal" id="add_players" data-toggle="modal"><img id="addbutton" src="graphics/Add.png"> Add Players</a>
 
-           <form onSubmit=""><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+
+
+
+
+
+
+
+           <form ng-submit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                            <h2 class="modal-title" id="myModalLabel">Add a New Recruit</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
                         </div>
-                        
+
                   <div class="modal-body" id="add_form">
-                    <div><label for="name">Name: </label><input type="text" class="form-control" name="name" id="name" placeholder="John Doe"><br></div>
-                    <div><label for="email">Email: </label><input type="text" class="form-control" name="email_addr" id="email_addr" placeholder="john@gmail.com"><br>  </div>
+                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe"><br></div>
+                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com"><br>  </div>
                     
+
                     <div class="form-group">
                       <label for="sel1">Position:</label>
-                      <select class="form-control" id="position">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                      <select class="form-control inp" id="position">
+                        <option>C</option>
+                        <option>SF</option>
+                        <option>PF</option>
+                        <option>PG</option>
+                        <option>SG</option>
+
                       </select>
                     </div>
 
-                    <div><label for="gpa">GPA: </label><input type="text" class="form-control" name="gpa" id="gpa" placeholder="4.0"><br>
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0"><br>
                     </div>
-                    <div><label for="sat">SAT: </label> <input type="text" class="form-control" name="sat" id="sat" placeholder="1600"><br>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600"><br>
                     </div>
-                    <div><label for="film">Film Link:  </label><input type="text" class="form-control" name="film" id="film" placeholder="youtube.com/..."><br> 
+
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..."><br> 
+
                     </div>
-                                 
+
                     <input type="submit" name="submit" class="submit_btn button2 btn-large" id="add_btn" value="Add Player" />
 
                       </div>
@@ -164,28 +179,32 @@ body{
             </div></form>
       <iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe>
 
-
+  
 
 
 <!---====================================================================================================================-->
 <!-- TABLE
 <!---====================================================================================================================-->
 
-        <div ng-app="playerApp" class="row">
-        <!-- <div class="row"> -->
-            <div ng-controller="PlayerController">
 
+
+              <div class="row">
+                  <a href="#" data-target="#addModal" id="add_players" data-toggle="modal">
+                    <img id="addbutton" src="graphics/Add.png"> Add Players
+                  </a>
 
                   <form id="search-form" role="search">
                   <div class="input-group">
                         <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="glyphicon glyphicon-search"></i>
+                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
 
                   </div>
                   </form>
+                </div>
+
 
                 <table id="player-table" class="table table-bordered">
 
@@ -197,8 +216,8 @@ body{
                         <td>GPA</td>
                         <td>SAT</td>
                     </tr>
-                    <tr ng-repeat="player in players" ng-class="{success: player.checkmark}">
-                        <td><input type="checkbox" ng-model="player.checkmark" ng-click="allChecked = false" /></td>
+                    <tr ng-repeat="player in players | filter:searchText" ng-class="{success: player.checkmark}">
+                        <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
                         <td>{{player.rating}}</td>
