@@ -24,4 +24,9 @@ angular.module('playerApp', [])
       };
     };
 
+    playerList.checkAll = function(check) {
+      for (var player in playerList)
+        player.checkmark = check;
+    };
+
   });
