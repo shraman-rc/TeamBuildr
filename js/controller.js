@@ -1,5 +1,34 @@
-angular.module('teambuildrApp', [])
-  .controller('PlayerController', function($scope, $http) {
+var teambuildrApp = angular.module('teambuildrApp', [
+  'ngRoute',
+  'playerControllers'
+]);
+
+// Routes
+
+teambuildrApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'templates/table.html',
+        controller: 'PlayerController'
+      }).
+      when('/email', {
+        templateUrl: 'templates/email.html',
+        controller: 'PlayerController'
+      }).
+      when('/compare', {
+        templateUrl: 'templates/compare.html',
+        controller: 'PlayerController'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }]);
+
+// Controllers
+
+var playerControllers = angular.module('playerControllers', []);
+playerControllers.controller('PlayerController', function($scope) {
 
     $scope.players = playerData;
 
