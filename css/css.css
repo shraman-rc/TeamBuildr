@@ -43,7 +43,6 @@ border-color:#D8D8D8 ;
 border-radius:10px;
 }
 
-
 .close {
 	border: 0;
 	color: black;
@@ -58,7 +57,7 @@ border-radius:10px;
 }
 
 #addbutton{
-	width:50px;
+	width:40px;
 	height:auto;
 }
 
@@ -78,4 +77,10 @@ border-radius:10px;
 #addModal {
 	height:auto;
 	width:auto;
+}
+
+.inp{
+	border-color:#D8D8D8 ;
+border-radius:10px;
+width:400px !important;
 }
