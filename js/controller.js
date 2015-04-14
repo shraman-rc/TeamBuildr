@@ -7,7 +7,7 @@ angular.module('teambuildrApp', [])
     //   $scope.players = data;
     // });
 
-    $scope.addPlayer = function(player) {
+    $scope.addPlayer = function() {
       playerList.players.push(player);
     };
 
