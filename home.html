@@ -76,18 +76,6 @@ body{
                   </form>
                 </div> -->
 
-                <div class="col-sm-3 col-md-3 pull-right">
-                  <form id="search-form" class="navbar-form" role="search">
-                  <div class="input-group">
-                        <input type="text" class="form-control search-form" placeholder="Search players by name...">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-
-                  </div>
-                  </form>
-                </div>
 
 
             </div>
@@ -101,7 +89,19 @@ body{
 
         <div class="row">
             <div ng-controller="PlayerController">
-                <table class="table table-bordered">
+
+                  <form id="search-form" role="search">
+                  <div class="input-group">
+                        <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+
+                  </div>
+                  </form>
+
+                <table id="player-table" class="table table-bordered">
                     <tr class="active">
                         <td><input type="checkbox" id="all_check" /></td>
                         <td>Name</td>
@@ -110,7 +110,7 @@ body{
                         <td>GPA</td>
                         <td>SAT</td>
                     </tr>
-                    <tr ng-repeat="player in players">
+                    <tr ng-repeat="player in players | filter:searchText">
                         <td><input type="checkbox" /></td>
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
