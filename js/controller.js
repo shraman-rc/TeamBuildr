@@ -8,7 +8,7 @@ angular.module('teambuildrApp', [])
     $scope.addPlayer = function(player) {
       playerList.players.push(player);
     };
-    
+
     $scope.removePlayer = function(player) {
       playerList.players.remove(player);
     };
@@ -26,9 +26,11 @@ angular.module('teambuildrApp', [])
       };
     };
 
-    $scope.checkAll = function(check) {
-      for (var player in playerList)
-        player.checkmark = check;
+    $scope.checkAll = function() {
+      for (var i=0; i<playerList.players.length; i++)
+        playerList.players[i].checkmark = playerList.allChecked;
     };
+
+    $scope.allChecked = false;
 
   });
