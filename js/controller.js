@@ -1,8 +1,9 @@
 angular.module('teambuildrApp', [])
-  .controller('PlayerController', function($scope) {
-    
-    $scope.players = [
-      {name:'Joe Joeson', email: "joe@gmail.com", checkmark:false, position:"stuff", rating:5, gpa:4.0, sat: 1600, film:"file://null"}];
+  .controller('PlayerController', function($scope, $http) {
+
+    $http.get("players.json").success(function(res){
+      $scope.players = data;
+    });
 
     $scope.addPlayer = function(player) {
       playerList.players.push(player);
