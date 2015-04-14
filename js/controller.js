@@ -37,8 +37,6 @@ angular.module('teambuildrApp', [])
 
   });
 
-[
-
 var playerData = [{
   name:'Joe Joeson',
   email: "joe@gmail.com",
