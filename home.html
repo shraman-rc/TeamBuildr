@@ -1,5 +1,6 @@
 
 <!doctype html>
+<html ng-app="teambuildrApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>TeamBuildr | Home</title>
@@ -75,18 +76,6 @@ body{
                   </form>
                 </div> -->
 
-                <div class="col-sm-3 col-md-3 pull-right">
-                  <form id="search-form" class="navbar-form" role="search">
-                  <div class="input-group">
-                        <input type="text" class="form-control search-form" placeholder="Search players by name...">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-
-                  </div>
-                  </form>
-                </div>
 
 
             </div>
@@ -98,10 +87,21 @@ body{
     <!-- Page Content -->
     <div class="container">
 
-        <div ng-app="playerApp" class="row">
+        <div class="row">
             <div ng-controller="PlayerController as playerList">
 
-                <table class="table table-bordered">
+                  <form id="search-form" role="search">
+                  <div class="input-group">
+                        <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+
+                  </div>
+                  </form>
+
+                <table id="player-table" class="table table-bordered">
                     <tr class="active">
                         <td><input type="checkbox" id="all_check" ng-model="playerList.allChecked" ng-click="playerList.checkAll()" /></td>
                         <td>Name</td>
