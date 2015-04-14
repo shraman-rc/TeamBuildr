@@ -7,6 +7,8 @@ angular.module('teambuildrApp', [])
     //   $scope.players = data;
     // });
 
+    $scope.selectedPlayer = $scope.players[0];
+
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
         gpa:$("#gpa").val(), sat:$("#sat").val(), film:$("#film").val()};
@@ -58,7 +60,12 @@ angular.module('teambuildrApp', [])
         if(!$scope.players[i].checkmark)
           $scope.allChecked = false;
       }
+    };
+
+    $scope.setSelected = function(player) {
+      $scope.selectedPlayer = player;
     }
+
 
 
     $scope.allChecked = false;
@@ -70,7 +77,7 @@ var playerData = [{
   name:'Joe Joeson',
   email: "joe@gmail.com",
   checkmark:false,
-  position:"stuff",
+  position:"SF",
   rating:5,
   gpa:4.0,
   sat: 1600,
@@ -81,7 +88,7 @@ var playerData = [{
   name:'Jack Jackon',
   email: "jack@gmail.com",
   checkmark:false,
-  position:"stuff",
+  position:"C",
   rating:4,
   gpa:3.0,
   sat: 1500,
@@ -92,7 +99,7 @@ var playerData = [{
   name:'Jim Jimson',
   email: "jim@gmail.com",
   checkmark:false,
-  position:"stuff",
+  position:"C",
   rating:3,
   gpa:4.5,
   sat: 1400,
@@ -103,7 +110,7 @@ var playerData = [{
   name:'Jorge Jorgeson',
   email: "jorge@gmail.com",
   checkmark:false,
-  position:"stuff",
+  position:"C",
   rating:3,
   gpa:2.0,
   sat: 1550,
@@ -114,7 +121,7 @@ var playerData = [{
   name:'Jill Jillson',
   email: "jill@gmail.com",
   checkmark:false,
-  position:"stuff",
+  position:"C",
   rating:5,
   gpa:3.8,
   sat: 1590,

@@ -121,6 +121,58 @@ body{
     <div class="container">
 
 
+<!---====================================================================================================================-->
+<!-- SHOW PLAYERS
+<!---====================================================================================================================-->
+
+
+
+
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h2 class="modal-title" id="myModalLabel">Recruit Information</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        </div>
+
+                  <div class="modal-body" id="add_form">
+                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
+                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
+                    
+
+                    <div class="form-group">
+                      <label for="sel1">Position:</label>
+                      <select class="form-control inp" id="position" ng-model="selectedPlayer.position">
+                        <option>C</option>
+                        <option>SF</option>
+                        <option>PF</option>
+                        <option>PG</option>
+                        <option>SG</option>
+
+                      </select>
+                    </div>
+
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
+                    </div>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
+                    </div>
+
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br> 
+
+                    </div>
+
+                  
+
+                      </div>
+
+                      <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+                </div>
+              </div>
+            </div>
+
+
+
 
 <!---====================================================================================================================-->
 <!-- ADD PLAYERS
@@ -214,9 +266,9 @@ body{
                     </tr>
                     <tr ng-repeat="player in players | filter:searchText" ng-class="{success: player.checkmark}">
                         <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
-                        <td>{{player.name}}</td>
+                        <td><a href="#" data-target="#showModal" id="show_players" data-toggle="modal" ng-click="setSelected(player)">{{player.name}}</a></td>
                         <td>{{player.position}}</td>
-                        <td>{{player.rating}}</td>
+                        <td><span class="stars">{{player.rating}}</span></td>
                         <td>{{player.gpa}}</td>
                         <td>{{player.sat}}</td>
                     </tr>
@@ -231,9 +283,18 @@ body{
 
 
 
+<!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
 
-
-
+<script type="text/javascript">
+$.fn.stars = function() {
+    return $(this).each(function() {
+        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+    });
+}
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 
 
 
