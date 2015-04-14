@@ -1,5 +1,6 @@
 
 <!doctype html>
+<html ng-app="teambuildrApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>TeamBuildr | Home</title>
@@ -98,8 +99,8 @@ body{
     <!-- Page Content -->
     <div class="container">
 
-        <div ng-app="playerApp" class="row">
-            <div ng-controller="PlayerController as playerList">
+        <div class="row">
+            <div ng-controller="PlayerController">
                 <table class="table table-bordered">
                     <tr class="active">
                         <td><input type="checkbox" id="all_check" /></td>
@@ -109,7 +110,7 @@ body{
                         <td>GPA</td>
                         <td>SAT</td>
                     </tr>
-                    <tr ng-repeat="player in playerList.players">
+                    <tr ng-repeat="player in players">
                         <td><input type="checkbox" /></td>
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
