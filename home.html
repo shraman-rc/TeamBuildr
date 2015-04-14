@@ -100,17 +100,18 @@ body{
 
         <div ng-app="playerApp" class="row">
             <div ng-controller="PlayerController as playerList">
+
                 <table class="table table-bordered">
                     <tr class="active">
-                        <td><input type="checkbox" id="all_check" /></td>
+                        <td><input type="checkbox" id="all_check" ng-model="playerList.allChecked" ng-click="playerList.checkAll()" /></td>
                         <td>Name</td>
                         <td>Pos</td>
                         <td>Rating</td>
                         <td>GPA</td>
                         <td>SAT</td>
                     </tr>
-                    <tr ng-repeat="player in playerList.players">
-                        <td><input type="checkbox" /></td>
+                    <tr ng-repeat="player in playerList.players" ng-class="{success: player.checkmark}">
+                        <td><input type="checkbox" ng-model="player.checkmark" ng-click="playerList.allChecked = false" /></td>
                         <td>{{player.name}}</td>
                         <td>{{player.position}}</td>
                         <td>{{player.rating}}</td>
@@ -118,6 +119,7 @@ body{
                         <td>{{player.sat}}</td>
                     </tr>
                 </table>
+
             </div>
         </div>
 
