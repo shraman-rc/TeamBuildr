@@ -11,4 +11,16 @@ angular.module('playerApp', [])
       playerList.players.remove(player);
     };
 
+    playerList.sortByAscending = function(property) {
+      return function(a, b) {
+        return (a[property] > b[property]) ? 1 : (a[property] < b[property]) ? -1 : 0;
+      };
+    };
+
+    playerList.sortByDescending = function(property) {
+      return function(a, b) {
+        return (a[property] > b[property]) ? -1 : (a[property] < b[property]) ? 1 : 0;
+      };
+    };
+
   });
