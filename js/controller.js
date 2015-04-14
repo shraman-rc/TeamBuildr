@@ -13,6 +13,16 @@ angular.module('teambuildrApp', [])
       $scope.players.push(player);
     };
 
+    $scope.loadEmails = function() {
+      var emails;
+      for (var i=0; i<$scope.players.length; i++){
+        if ($scope.players[i].checkmark)
+          emails+=$scope.players[i].email+"; ";
+        
+      }
+      $('#mailto').val(emails);
+    }
+
     $scope.removePlayer = function(player) {
       $scope.players.remove(player);
     };

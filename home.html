@@ -32,6 +32,9 @@ body{
 </head>
 
 <body>
+        <div ng-app="playerApp" class="row">
+        <!-- <div class="row"> -->
+            <div ng-controller="PlayerController">
 
 <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
@@ -62,7 +65,7 @@ body{
 <!---====================================================================================================================-->
 
 
-                    <li><a href="#" data-toggle="modal" class="special" id="email" data-target="#emailModal">Email Selected Players</a>
+          <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
 
 
             <form onSubmit=""><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
@@ -125,7 +128,13 @@ body{
 <!---====================================================================================================================-->
 
 
-           <form onSubmit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+
+
+
+
+
+
+           <form ng-submit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -141,10 +150,12 @@ body{
                     <div class="form-group">
                       <label for="sel1">Position:</label>
                       <select class="form-control inp" id="position">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>C</option>
+                        <option>SF</option>
+                        <option>PF</option>
+                        <option>PG</option>
+                        <option>SG</option>
+
                       </select>
                     </div>
 
@@ -174,9 +185,6 @@ body{
 <!-- TABLE
 <!---====================================================================================================================-->
 
-        <div ng-app="playerApp" class="row">
-        <!-- <div class="row"> -->
-            <div ng-controller="PlayerController">
 
 
               <div class="row">
