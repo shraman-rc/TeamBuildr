@@ -163,7 +163,7 @@ body{
 
                     </div>
 
-                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="add_btn" value="Modify Player" />
+                  
 
                       </div>
 
@@ -263,7 +263,7 @@ body{
                     </tr>
                     <tr ng-repeat="player in players | filter:searchText" ng-class="{success: player.checkmark}">
                         <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
-                        <td>{{player.name}}</td>
+                        <td><a href="#" data-target="#showModal" id="show_players" data-toggle="modal" ng-click="setSelected(player)">{{player.name}}</a></td>
                         <td>{{player.position}}</td>
                         <td><span class="stars">{{player.rating}}</span></td>
                         <td>{{player.gpa}}</td>

@@ -54,7 +54,12 @@ angular.module('teambuildrApp', [])
         if(!$scope.players[i].checkmark)
           $scope.allChecked = false;
       }
+    };
+
+    $scope.setSelected = function(player) {
+      $scope.selectedPlayer = player;
     }
+
 
 
     $scope.allChecked = false;
