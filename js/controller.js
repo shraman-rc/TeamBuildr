@@ -39,7 +39,7 @@ angular.module('teambuildrApp', [])
 
 [
 
-var playerData = {
+var playerData = [{
   name:'Joe Joeson',
   email: "joe@gmail.com",
   checkmark:false,
@@ -92,6 +92,4 @@ var playerData = {
   gpa:3.8,
   sat: 1590,
   film:"file://null"
-}
-
-]
+}];
