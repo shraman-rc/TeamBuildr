@@ -10,7 +10,9 @@ angular.module('teambuildrApp', [])
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
         gpa:$("#gpa").val(), sat:$("#sat").val(), film:$("#film").val()};
+        
       $scope.players.push(player);
+      $('.modal').modal('hide');
     };
 
     $scope.loadEmails = function() {
@@ -18,9 +20,13 @@ angular.module('teambuildrApp', [])
       for (var i=0; i<$scope.players.length; i++){
         if ($scope.players[i].checkmark)
           emails+=$scope.players[i].email+"; ";
-        
       }
       $('#mailto').val(emails);
+    }
+
+    $scope.emailSubmit = function(){
+      console.log("happening");
+      $('.modal').modal('hide');
     }
 
     $scope.removePlayer = function(player) {

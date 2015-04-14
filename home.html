@@ -19,7 +19,6 @@
 body{
   padding-top:70px;
 }
-
 </style>
 
 
@@ -29,11 +28,11 @@ body{
 
 <script src="js/angular.min.js"></script>
 <script src="js/controller.js"></script>
+
 </head>
 
 <body>
         <div ng-app="playerApp" class="row">
-        <!-- <div class="row"> -->
             <div ng-controller="PlayerController">
 
 <!---====================================================================================================================-->
@@ -68,7 +67,7 @@ body{
           <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
 
 
-            <form onSubmit=""><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+            <form ng-submit="emailSubmit();" id="emailmod"><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -129,11 +128,6 @@ body{
 
 
 
-
-
-
-
-
            <form ng-submit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -158,6 +152,9 @@ body{
 
                       </select>
                     </div>
+
+                <label for="label">Rating: </label>
+
 
                     <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0"><br>
                     </div>
