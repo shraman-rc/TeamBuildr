@@ -30,10 +30,13 @@ teambuildrApp.config(['$routeProvider',
 var playerControllers = angular.module('playerControllers', []);
 playerControllers.controller('PlayerController', function($scope, $http) {
 
-    $http.get("players.json").success(function(res){
-      $scope.players = data;
-      $scope.selectedPlayer = $scope.players[0];
-    });
+    $scope.selectedPlayer = $scope.players[0];
+    $scope.players = playerData;
+
+    // $http.get("players.json").success(function(res){
+    //   $scope.players = data;
+    // });
+
 
 
 
@@ -100,3 +103,58 @@ playerControllers.controller('PlayerController', function($scope, $http) {
 
 
   });
+
+var playerData = [{
+  name:'Joe Joeson',
+  email: "joe@gmail.com",
+  checkmark:false,
+  position:"SF",
+  rating:5,
+  gpa:4.0,
+  sat: 1600,
+  film:"file://null"
+},
+
+{
+  name:'Jack Jackon',
+  email: "jack@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:4,
+  gpa:3.0,
+  sat: 1500,
+  film:"file://null"
+},
+
+{
+  name:'Jim Jimson',
+  email: "jim@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:3,
+  gpa:4.5,
+  sat: 1400,
+  film:"file://null"
+},
+
+{
+  name:'Jorge Jorgeson',
+  email: "jorge@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:3,
+  gpa:2.0,
+  sat: 1550,
+  film:"file://null"
+},
+
+{
+  name:'Jill Jillson',
+  email: "jill@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:5,
+  gpa:3.8,
+  sat: 1590,
+  film:"file://null"
+}];
