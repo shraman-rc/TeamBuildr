@@ -1,6 +1,4 @@
-body{
-  padding-top:70px;
-}
+
 
 .search-icon {
 position:relative; 
@@ -123,5 +121,26 @@ span.stars span {
 
 .form-inline{
 	margin:0px;
+}
+
+
+
+
+/*THE STUFF FOR COMPARISON PAGE*/
+#left_panel{
+float: left;
+width: 30%;
+background-color:#d8d8d8;
+height:100vh;
+padding-left:30px;
+padding:10px;
+margin-left:15px;
+}
+
+#right_panel{
+margin-left:30%;
+padding:10px;
+padding-left:20px;
+height:100vh;
 }
 
