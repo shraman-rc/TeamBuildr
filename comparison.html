@@ -21,9 +21,9 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="js/controller.js"></script>
 <style>
-body{
+/*body{
   padding-top:50px;
-}
+}*/
 </style>
 </head>
 
@@ -64,9 +64,29 @@ body{
 
     <!-- Page Content -->
     <!-- <div class="container"> -->
-    <div>
+    <div id="comparison_contents">
         <div id="left_panel">
-            left panel
+        <div id="instructions">
+Control which recruits you see with search and filter. Drag a recruit to right to expand their information to compare multiple recruits at a time.<br>
+        </div>
+
+        <div id="rest">
+
+        <form id="search-form" role="search">
+            <div class="input-group">
+              <input ng-model="searchText" type="text" class="form-control search-form2" placeholder="Search players by any attribute...">
+              <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
+                  </button>
+              </span>
+            </div>
+        </form>
+
+
+
+
+
+    </div><!--rest-->
         </div>
                         
         <div id="right_panel">
