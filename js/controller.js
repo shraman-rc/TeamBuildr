@@ -92,8 +92,12 @@ playerControllers.controller('PlayerController', function($scope, $http) {
       $scope.selectedPlayer = player;
     }
 
+    // $scope.setDraggedPlayer = function(player){
+    //   $scope.draggedPlayer = player;
+    // }
+
     $scope.addToCompare = function(player) {
-      
+      $scope.comparedPlayers.push(player);
     }
 
 
