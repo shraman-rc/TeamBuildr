@@ -28,15 +28,11 @@ teambuildrApp.config(['$routeProvider',
 // Controllers
 
 var playerControllers = angular.module('playerControllers', []);
-playerControllers.controller('PlayerController', function($scope) {
+playerControllers.controller('PlayerController', function($scope, $http) {
 
     $scope.players = playerData;
-
-    // $http.get("players.json").success(function(res){
-    //   $scope.players = data;
-    // });
-
     $scope.selectedPlayer = $scope.players[0];
+
 
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
@@ -103,56 +99,145 @@ playerControllers.controller('PlayerController', function($scope) {
   });
 
 var playerData = [{
-  name:'Joe Joeson',
+  name:'Joe Schneider',
   email: "joe@gmail.com",
   checkmark:false,
   position:"SF",
-  rating:5,
+  rating:4,
   gpa:4.0,
   sat: 1600,
-  film:"file://null"
+  film:"https://www.youtube.com/watch?v=CU9EW3TgfyI"
 },
 
 {
-  name:'Jack Jackon',
-  email: "jack@gmail.com",
+  name:'Felix Albert',
+  email: "falb@gmail.com",
+  checkmark:false,
+  position:"SF",
+  rating:4,
+  gpa:3.0,
+  sat: 1520,
+  film:"https://www.youtube.com/watch?v=u2wwuA8AufA"
+},
+
+{
+  name:'Theo James',
+  email: "jamest@gmail.com",
+  checkmark:false,
+  position:"SG",
+  rating:5,
+  gpa:3.4,
+  sat:1330,
+  film:"https://www.youtube.com/watch?v=ockLGk0syuI"
+},
+
+{
+  name:'Riley Minorik',
+  email: "rikid22@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:5,
+  gpa:3.5,
+  sat:1440,
+  film:"https://www.youtube.com/watch?v=ockLGk0syuI"
+},
+
+{
+  name:'Kalya Torres',
+  email: "ktorr@gmail.com",
   checkmark:false,
   position:"C",
   rating:4,
-  gpa:3.0,
-  sat: 1500,
-  film:"file://null"
+  gpa:3.97,
+  sat:1580,
+  film:"https://www.youtube.com/watch?v=7Me1iui8H7s"
 },
 
 {
-  name:'Jim Jimson',
-  email: "jim@gmail.com",
+  name:'John Lauck',
+  email: "lauck@gmail.com",
+  checkmark:false,
+  position:"PG",
+  rating:2,
+  gpa:3.5,
+  sat:1500,
+  film:"https://www.youtube.com/watch?v=ZzkLcBerZQg"
+},
+
+{
+  name:'John Maeda',
+  email: "maeda@gmail.com",
+  checkmark:false,
+  position:"PG",
+  rating:3,
+  gpa:3.9,
+  sat:1580,
+  film:"https://www.youtube.com/watch?v=Q9Igg8ws5FA"
+},
+
+{
+  name:'Ryan Crawford',
+  email: "crawford@sports.com",
   checkmark:false,
   position:"C",
   rating:3,
-  gpa:4.5,
-  sat: 1400,
-  film:"file://null"
+  gpa:2.5,
+  sat: 1200,
+  film:"https://www.youtube.com/watch?v=rJno-m3ndpc"
 },
 
 {
-  name:'Jorge Jorgeson',
-  email: "jorge@gmail.com",
+  name:'Allen Williams',
+  email: "awill@gmail.com",
   checkmark:false,
-  position:"C",
+  position:"PF",
   rating:3,
   gpa:2.0,
-  sat: 1550,
-  film:"file://null"
+  sat: 1150,
+  film:"https://www.youtube.com/watch?v=BIFhHFSvsdo"
 },
 
 {
-  name:'Jill Jillson',
-  email: "jill@gmail.com",
+  name:'Andrew Wells',
+  email: "drew@gmail.com",
   checkmark:false,
   position:"C",
+  rating:3,
+  gpa:3.7,
+  sat: 1350,
+  film:"https://www.youtube.com/watch?v=fJvCgJZP7pg"
+},
+
+{
+  name:'Jorge Gonsales',
+  email: "jorge@gmail.com",
+  checkmark:false,
+  position:"SF",
+  rating:3,
+  gpa:3.2,
+  sat: 1350,
+  film:"https://www.youtube.com/watch?v=-K0FJ-Q49iI"
+},
+
+{
+  name:'Arthur Burkhart',
+  email: "artsquared@gmail.com",
+  checkmark:false,
+  position:"C",
+  rating:3,
+  gpa:3.6,
+  sat: 1420,
+  film:"https://www.youtube.com/watch?v=xR3gonK5AyU"
+},
+
+
+{
+  name:'Justin Taylor',
+  email: "jtaylor@gmail.com",
+  checkmark:false,
+  position:"SG",
   rating:5,
   gpa:3.8,
   sat: 1590,
-  film:"file://null"
+  film:"https://www.youtube.com/watch?v=pMU8i6mWZMw"
 }];
