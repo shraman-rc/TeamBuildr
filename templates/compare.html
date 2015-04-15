@@ -1,9 +1,14 @@
-<h1>Compare Page! :D</h1>
-<div id="leftPanel">
-	<ul>
-		<li ng-repeat="phone in phones">
-			<span>{{phone.name}}</span>
-      		<p>{{phone.snippet}}</p>
-    	</li>
-	</ul>
+<div>
+    <div class="row">
+      <div class="col-sm-5 col-md-3">
+        <div class="thumbnail">
+          <img src="graphics/default_profile.png" alt="Profile cannot display!" width="75" height="75">
+          <div class="caption">
+            <h4>{{selectedPlayer.name}}</h4>
+            <p>...</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
