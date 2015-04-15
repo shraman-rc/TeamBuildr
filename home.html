@@ -29,6 +29,7 @@ body{
 <link rel="stylesheet" type="text/css" href="css/css.css"/>
 
 <script src="js/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="js/controller.js"></script>
 
 </head>
@@ -244,48 +245,10 @@ body{
 
 
 <!---====================================================================================================================-->
-<!-- TABLE
+<!-- INTERCHANGEABLE VIEWS
 <!---====================================================================================================================-->
 
-
-
-              <div class="row">
-                  <a href="#" data-target="#addModal" id="add_players" data-toggle="modal">
-                    <img id="addbutton" src="graphics/Add.png"> Add Players
-                  </a>
-
-                  <form id="search-form" role="search">
-                  <div class="input-group">
-                        <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
-                            </button>
-                        </span>
-
-                  </div>
-                  </form>
-                </div>
-
-
-                <table id="player-table" class="table table-bordered">
-
-                    <tr class="active">
-                        <td><input type="checkbox" id="all_check" ng-model="allChecked" ng-click="checkAll()" /></td>
-                        <td>Name</td>
-                        <td>Pos</td>
-                        <td>Rating</td>
-                        <td>GPA</td>
-                        <td>SAT</td>
-                    </tr>
-                    <tr ng-repeat="player in players | filter:searchText" ng-class="{success: player.checkmark}">
-                        <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
-                        <td><a href="#" data-target="#showModal" id="show_players" data-toggle="modal" ng-click="setSelected(player)">{{player.name}}</a></td>
-                        <td>{{player.position}}</td>
-                        <td><span class="stars">{{player.rating}}</span></td>
-                        <td>{{player.gpa}}</td>
-                        <td>{{player.sat}}</td>
-                    </tr>
-                </table>
+                <div ng-view></div>
 
             </div>
         </div>

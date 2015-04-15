@@ -1,11 +1,38 @@
-angular.module('teambuildrApp', [])
-  .controller('PlayerController', function($scope, $http) {
+var teambuildrApp = angular.module('teambuildrApp', [
+  'ngRoute',
+  'playerControllers'
+]);
 
-    $scope.players = playerData;
+// Routes
 
-    // $http.get("players.json").success(function(res){
-    //   $scope.players = data;
-    // });
+teambuildrApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'templates/table.html',
+        controller: 'PlayerController'
+      }).
+      when('/email', {
+        templateUrl: 'templates/email.html',
+        controller: 'PlayerController'
+      }).
+      when('/compare', {
+        templateUrl: 'templates/compare.html',
+        controller: 'PlayerController'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }]);
+
+// Controllers
+
+var playerControllers = angular.module('playerControllers', []);
+playerControllers.controller('PlayerController', function($scope) {
+
+    $http.get("players.json").success(function(res){
+      $scope.players = data;
+    });
 
     $scope.selectedPlayer = $scope.players[0];
 
@@ -72,58 +99,3 @@ angular.module('teambuildrApp', [])
 
 
   });
-
-var playerData = [{
-  name:'Joe Joeson',
-  email: "joe@gmail.com",
-  checkmark:false,
-  position:"SF",
-  rating:5,
-  gpa:4.0,
-  sat: 1600,
-  film:"file://null"
-},
-
-{
-  name:'Jack Jackon',
-  email: "jack@gmail.com",
-  checkmark:false,
-  position:"C",
-  rating:4,
-  gpa:3.0,
-  sat: 1500,
-  film:"file://null"
-},
-
-{
-  name:'Jim Jimson',
-  email: "jim@gmail.com",
-  checkmark:false,
-  position:"C",
-  rating:3,
-  gpa:4.5,
-  sat: 1400,
-  film:"file://null"
-},
-
-{
-  name:'Jorge Jorgeson',
-  email: "jorge@gmail.com",
-  checkmark:false,
-  position:"C",
-  rating:3,
-  gpa:2.0,
-  sat: 1550,
-  film:"file://null"
-},
-
-{
-  name:'Jill Jillson',
-  email: "jill@gmail.com",
-  checkmark:false,
-  position:"C",
-  rating:5,
-  gpa:3.8,
-  sat: 1590,
-  film:"file://null"
-}];
