@@ -1,4 +1,4 @@
-
+  
 <!doctype html>
 <html ng-app="teambuildrApp">
 <head>
@@ -37,7 +37,7 @@
 <!--    NAVBAR SETUP
 <!---====================================================================================================================-->
 
-
+  
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -90,32 +90,19 @@ Control which recruits you see with search and filter. Drag a recruit to right t
 
 
 
-<!-- structure of player card per search result in display-->
-        <div class="list-group">
+<!-- structure of player card per search result in display-->  
+
+        <div ng-repeat="player in players | filter: searchText" class="list-group">
           <div class="list-group-item active">
-            <div id="name" style="float:left">player.name  </div>
-            <div id="rating" style="float:right"> player.rating starz</div>
+            <div id="name" style="float:left">{{player.name}}</div>
+            <div id="rating" style="float:right">{{player.rating}} starz</div>
             <div style="clear:both"></div></div>
           <div class="list-group-item">
-                <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
+                <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
           </div>
         </div>
 
-             
-
-             <!-- can delete these, did it just too see overflow was working-->   
-
-        <div class="list-group">
-          <div class="list-group-item active">
-            <div id="name" style="float:left">player.name  </div>
-            <div id="rating" style="float:right"> player.rating starz</div>
-            <div style="clear:both"></div></div>
-          <div class="list-group-item">
-                <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
-          </div>
-        </div>
-
-        <div class="list-group">
+<!--         <div class="list-group">
           <div class="list-group-item active">
             <div id="name" style="float:left">player.name  </div>
             <div id="rating" style="float:right"> player.rating starz</div>
@@ -143,7 +130,7 @@ Control which recruits you see with search and filter. Drag a recruit to right t
           <div class="list-group-item">
                 <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
           </div>
-        </div>
+        </div> -->
 
 
 
