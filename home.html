@@ -14,8 +14,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-<script src="js/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
 
 <style>
 body{
@@ -140,13 +138,13 @@ body{
                         </div>
 
                   <div class="modal-body" id="add_form">
-                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
-                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
+                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
+                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
                     
 
                     <div class="form-group">
                       <label for="sel1">Position:</label>
-                      <select class="form-control inp" ng-model="selectedPlayer.position">
+                      <select class="form-control inp" id="position" ng-model="selectedPlayer.position">
                         <option>C</option>
                         <option>SF</option>
                         <option>PF</option>
@@ -156,12 +154,12 @@ body{
                       </select>
                     </div>
 
-                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
                     </div>
-                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
                     </div>
 
-                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br> 
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br> 
 
                     </div>
 
@@ -208,18 +206,7 @@ body{
                       </select>
                     </div>
 
-                <!-- <div id="slider"></div> -->
-                <div class="form-group">
-                      <label for="sel1">Position:</label>
-                      <select class="form-control inp" id="rating">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-
+                <label for="label">Rating: </label>
 
 
                     <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0"><br>
@@ -272,18 +259,6 @@ $(function() {
 });
 </script>
 
-
-<!--script type="text/javascript">
-  $(function() {
-    $( "#slider" ).slider({
-      range: "min",
-      value: 0,
-      min: 0,
-      max: 8000,
-    step: 200,
-    });
-  });
-</script-->
 
 
 
