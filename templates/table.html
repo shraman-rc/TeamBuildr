@@ -238,11 +238,11 @@ console.log("loading");
 
         <tr class="active">
             <td><input type="checkbox" id="all_check" ng-model="allChecked" ng-click="checkAll()" /></td>
-            <td><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name</td>
-            <td><a href="" ng-click="predicate = 'position'; reverse=!reverse">Position</td>
-            <td><a href="" ng-click="predicate = 'rating'; reverse=!reverse">Rating</td>
-            <td><a href="" ng-click="predicate = 'gpa'; reverse=!reverse">GPA</td>
-            <td><a href="" ng-click="predicate = 'sat'; reverse=!reverse">SAT</td>
+            <td><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'name' && reverse, 'glyphicon-chevron-down': predicate == 'name' && !reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'position'; reverse=!reverse">Position<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'position' && reverse, 'glyphicon-chevron-down': predicate == 'position' && !reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'rating'; reverse=!reverse">Rating<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'rating' && !reverse, 'glyphicon-chevron-down': predicate == 'rating' && reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'gpa'; reverse=!reverse">GPA<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'gpa' && !reverse, 'glyphicon-chevron-down': predicate == 'gpa' && reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'sat'; reverse=!reverse">SAT<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'sat' && !reverse, 'glyphicon-chevron-down': predicate == 'sat' && reverse}"></span></font></td>
         </tr>
         <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{hilightedrow: player.checkmark}">
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
