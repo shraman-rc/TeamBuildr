@@ -28,13 +28,14 @@ teambuildrApp.config(['$routeProvider',
 // Controllers
 
 var playerControllers = angular.module('playerControllers', []);
-playerControllers.controller('PlayerController', function($scope) {
+playerControllers.controller('PlayerController', function($scope, $http) {
 
     $http.get("players.json").success(function(res){
       $scope.players = data;
+      $scope.selectedPlayer = $scope.players[0];
     });
 
-    $scope.selectedPlayer = $scope.players[0];
+
 
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
