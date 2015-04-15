@@ -3,6 +3,9 @@
 
 <div>
 
+<script>
+console.log("loading");
+</script>
 <!---====================================================================================================================-->
 <!-- EMAIL
 <!---====================================================================================================================-->
@@ -261,13 +264,13 @@
 
         <tr class="active">
             <td><input type="checkbox" id="all_check" ng-model="allChecked" ng-click="checkAll()" /></td>
-            <td>Name</td>
-            <td>Position</td>
-            <td>Rating</td>
-            <td>GPA</td>
-            <td>SAT</td>
+            <td><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name</td>
+            <td><a href="" ng-click="predicate = 'position'; reverse=!reverse">Position</td>
+            <td><a href="" ng-click="predicate = 'rating'; reverse=!reverse">Rating</td>
+            <td><a href="" ng-click="predicate = 'gpa'; reverse=!reverse">GPA</td>
+            <td><a href="" ng-click="predicate = 'sat'; reverse=!reverse">SAT</td>
         </tr>
-        <tr ng-repeat="player in players | filter:searchText" ng-class="{success: player.checkmark}">
+        <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{success: player.checkmark}">
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
             <td>{{player.name}}</td>
             <td>{{player.position}}</td>
