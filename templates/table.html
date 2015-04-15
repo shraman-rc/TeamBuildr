@@ -1,8 +1,119 @@
+
+
+
 <div>
+<script src="js/bootstrap.min.js"></script>
+
+<!---====================================================================================================================-->
+<!-- EMAIL
+<!---====================================================================================================================-->
+
+      <form ng-submit="emailSubmit();" id="emailmod"><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h2 class="modal-title" id="myModalLabel">Email Selected Players</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        </div>
+
+                        <div class="modal-body" id="email_form">
+
+                              <div id="mail_to">Mail to: <input type="text" class="form-control inp" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
+                              <hr>
+        
+                              <div id="subject_for" for="subject">Subject: <input type="text" class="form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
+
+                              <hr>
+
+                              <div for="message">Message:</div>
+                              <hr>
+
+
+                              <textarea type="text" class="form-control" name="message" id="message" placeholder="body"></textarea></br>
+                                 
+                              <input type="submit" name="submit" class="signupbutton button2 btn-large" id="send_btn" value="Send!" />
+
+                      </div>
+
+                      <div id='signupmessage1' class="hidden" style="color:black;text-align:center"></br><h3>Registration form submitted!</h3><br><br></div>
+
+
+                </div>
+              </div>
+            </div></form>
+      <!-- <iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe> -->
+
+
+
+
+
+
+<!---====================================================================================================================-->
+<!-- SHOW PLAYERS
+<!---====================================================================================================================-->
+
+
+
+
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h2 class="modal-title" id="myModalLabel">Recruit Information</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        </div>
+
+                  <div class="modal-body" id="add_form">
+                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
+                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
+                    
+
+                    <div class="form-group">
+                      <label for="sel1">Position:</label>
+                      <select class="form-control inp" ng-model="selectedPlayer.position">
+                        <option>C</option>
+                        <option>SF</option>
+                        <option>PF</option>
+                        <option>PG</option>
+                        <option>SG</option>
+
+                      </select>
+                    </div>
+
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
+                    </div>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
+                    </div>
+
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br> 
+
+                    </div>
+
+                  
+
+                      </div>
+
+                      <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
     <div class="row">
         <a href="#" data-target="#addModal" id="add_players" data-toggle="modal">
           <img id="addbutton" src="graphics/Add.png"> Add Players
         </a>
+
+
 
         <form id="search-form" role="search">
         <div class="input-group">
@@ -15,6 +126,80 @@
         </div>
         </form>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+<!---====================================================================================================================-->
+<!-- ADD PLAYERS
+<!---====================================================================================================================-->
+
+
+
+           <form ng-submit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                           <h2 class="modal-title" id="myModalLabel">Add a New Recruit</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        </div>
+
+                  <div class="modal-body" id="add_form">
+                    <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe"><br></div>
+                    <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com"><br>  </div>
+                    
+
+                    <div class="form-group">
+                      <label for="sel1">Position:</label>
+                      <select class="form-control inp" id="position">
+                        <option>C</option>
+                        <option>SF</option>
+                        <option>PF</option>
+                        <option>PG</option>
+                        <option>SG</option>
+
+                      </select>
+                    </div>
+
+                <!-- <div id="slider"></div> -->
+                <div class="form-group">
+                      <label for="sel1">Rating:</label>
+                      <select class="form-control inp" id="rating">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+
+
+
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0"><br>
+                    </div>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600"><br>
+                    </div>
+
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..."><br> 
+
+                    </div>
+
+                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="add_btn" value="Add Player" />
+
+                      </div>
+
+                      <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+                </div>
+              </div>
+            </div></form>
+      <!-- <iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe> -->
 
     <table id="player-table" class="table table-bordered">
 
