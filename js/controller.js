@@ -97,8 +97,15 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     // }
 
     $scope.addToCompare = function(player) {
-      $scope.comparedPlayers.push(player);
+      if($scope.comparedPlayers.indexOf(player) === -1){
+        $scope.comparedPlayers.push(player);
+      }
     }
+
+    // UI-Sortable Library options
+    $scope.sortableOptions = {
+        axis: 'x'
+    };
 
 
     $scope.allChecked = false;
@@ -107,6 +114,7 @@ playerControllers.controller('PlayerController', function($scope, $http) {
   });
 
 var playerData = [{
+  id: 1,
   name:'Joe Schneider',
   email: "joe@gmail.com",
   checkmark:false,
@@ -118,6 +126,7 @@ var playerData = [{
 },
 
 {
+  id: 2,
   name:'Felix Albert',
   email: "falb@gmail.com",
   checkmark:false,
@@ -129,6 +138,7 @@ var playerData = [{
 },
 
 {
+  id: 3,
   name:'Theo James',
   email: "jamest@gmail.com",
   checkmark:false,
@@ -140,6 +150,7 @@ var playerData = [{
 },
 
 {
+  id: 4,
   name:'Riley Minorik',
   email: "rikid22@gmail.com",
   checkmark:false,
@@ -151,6 +162,7 @@ var playerData = [{
 },
 
 {
+  id: 5,
   name:'Kalya Torres',
   email: "ktorr@gmail.com",
   checkmark:false,
@@ -162,6 +174,7 @@ var playerData = [{
 },
 
 {
+  id: 6,
   name:'John Lauck',
   email: "lauck@gmail.com",
   checkmark:false,
@@ -173,6 +186,7 @@ var playerData = [{
 },
 
 {
+  id: 7,
   name:'John Maeda',
   email: "maeda@gmail.com",
   checkmark:false,
@@ -184,6 +198,7 @@ var playerData = [{
 },
 
 {
+  id: 8,
   name:'Ryan Crawford',
   email: "crawford@sports.com",
   checkmark:false,
@@ -195,6 +210,7 @@ var playerData = [{
 },
 
 {
+  id: 9,
   name:'Allen Williams',
   email: "awill@gmail.com",
   checkmark:false,
@@ -206,6 +222,7 @@ var playerData = [{
 },
 
 {
+  id: 10,
   name:'Andrew Wells',
   email: "drew@gmail.com",
   checkmark:false,
@@ -217,6 +234,7 @@ var playerData = [{
 },
 
 {
+  id: 11,
   name:'Jorge Gonsales',
   email: "jorge@gmail.com",
   checkmark:false,
@@ -228,6 +246,7 @@ var playerData = [{
 },
 
 {
+  id: 12,
   name:'Arthur Burkhart',
   email: "artsquared@gmail.com",
   checkmark:false,
@@ -240,6 +259,7 @@ var playerData = [{
 
 
 {
+  id: 13,
   name:'Justin Taylor',
   email: "jtaylor@gmail.com",
   checkmark:false,
