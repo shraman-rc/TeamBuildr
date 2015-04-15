@@ -22,7 +22,7 @@ console.log("loading");
 
                               <div id="mail_to">Mail to: <input type="text" class="form-control inp" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
                               <hr>
-        
+
                               <div id="subject_for" for="subject">Subject: <input type="text" class="form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
 
                               <hr>
@@ -32,7 +32,7 @@ console.log("loading");
 
 
                               <textarea type="text" class="form-control" name="message" id="message" placeholder="body"></textarea></br>
-                                 
+
                               <input type="submit" name="submit" class="signupbutton button2 btn-large" id="send_btn" value="Send!" />
 
                       </div>
@@ -68,7 +68,7 @@ console.log("loading");
                   <div class="modal-body" id="add_form">
                     <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
                     <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
-                    
+
 
                     <div class="form-group">
                       <label for="sel1">Position:</label>
@@ -87,11 +87,11 @@ console.log("loading");
                     <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
                     </div>
 
-                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br> 
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br>
 
                     </div>
 
-                  
+
 
                       </div>
 
@@ -117,7 +117,7 @@ console.log("loading");
 
                 <div class="modal-body help-contents">
                adsadasdasda
-              
+
 
                 </div>
 
@@ -187,7 +187,7 @@ console.log("loading");
                   <div class="modal-body" id="add_form">
                     <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe"><br></div>
                     <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com"><br>  </div>
-                    
+
 
                     <div class="form-group">
                       <label for="sel1">Position:</label>
@@ -220,7 +220,7 @@ console.log("loading");
                     <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600"><br>
                     </div>
 
-                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..."><br> 
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..."><br>
 
                     </div>
 
@@ -246,7 +246,7 @@ console.log("loading");
         </tr>
         <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{success: player.checkmark}">
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
-            <td>{{player.name}}</td>
+            <td><a href="#" data-target="#showModal">{{player.name}}</a></td>
             <td>{{player.position}}</td>
             <td>{{player.rating}}</td>
             <td>{{player.gpa}}</td>
