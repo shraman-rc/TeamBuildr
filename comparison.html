@@ -20,6 +20,7 @@
 <script src="js/angular.min.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="js/controller.js"></script>
+<script type="text/javascript" src="js/sortable.js"></script>
 <style>
 /*body{
   padding-top:50px;
@@ -91,7 +92,7 @@ Control which recruits you see with search and filter. Drag a recruit to right t
 
 
 <!-- structure of player card per search result in display-->  
-
+      <ul ui-sortable ng-model="players"> 
         <div ng-repeat="player in players | filter: searchText" class="list-group">
           <div class="list-group-item active">
             <div id="name" style="float:left">{{player.name}}</div>
@@ -101,38 +102,7 @@ Control which recruits you see with search and filter. Drag a recruit to right t
                 <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
           </div>
         </div>
-
-<!--         <div class="list-group">
-          <div class="list-group-item active">
-            <div id="name" style="float:left">player.name  </div>
-            <div id="rating" style="float:right"> player.rating starz</div>
-            <div style="clear:both"></div></div>
-          <div class="list-group-item">
-                <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item active">
-            <div id="name" style="float:left">player.name  </div>
-            <div id="rating" style="float:right"> player.rating starz</div>
-            <div style="clear:both"></div></div>
-          <div class="list-group-item">
-                <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
-          </div>
-        </div>
-
-        <div class="list-group">
-          <div class="list-group-item active">
-            <div id="name" style="float:left">player.name  </div>
-            <div id="rating" style="float:right"> player.rating starz</div>
-            <div style="clear:both"></div></div>
-          <div class="list-group-item">
-                <span id="gpa">player.gpa</span> GPA, <span id="sat">player.sat</span> SAT<br><span class="italics">player.position</span>
-          </div>
-        </div> -->
-
-
+      </ul>
 
         </div><!--rest-->
     </div>

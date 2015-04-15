@@ -1,6 +1,7 @@
 var teambuildrApp = angular.module('teambuildrApp', [
   'ngRoute',
-  'playerControllers'
+  'playerControllers',
+  'ui.sortable'
 ]);
 
 // Routes
