@@ -1,7 +1,10 @@
+// App module
+
 var teambuildrApp = angular.module('teambuildrApp', [
   'ngRoute',
   'playerControllers',
-  'ui.sortable'
+  'ui.sortable',
+  'playerFilters'
 ]);
 
 // Routes
@@ -34,6 +37,11 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     $scope.players = playerData;
     $scope.selectedPlayer = $scope.players[0];
     $scope.comparedPlayers = [];
+
+    // Filter attributes
+    $scope.posFilter = null;
+    $scope.minGPA = 0.0;
+    $scope.minSAT = 0;
 
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
@@ -102,6 +110,23 @@ playerControllers.controller('PlayerController', function($scope, $http) {
       }
     }
 
+    $scope.compareFilter = function(player) {
+      var validPos = $scope.posFilter == null || player.position == $scope.posFilter;
+      return validPos && player.gpa >= $scope.minGPA && player.sat >= $scope.minSAT;
+    }
+
+    $scope.setPosFilter = function(pos){
+      $scope.posFilter = pos;
+    }
+
+    $scope.setGPAFilter = function(GPA){
+      $scope.minGPA = GPA;
+    }
+
+    $scope.setSATFilter = function(SAT){
+      $scope.minSAT = SAT;
+    }
+
     // UI-Sortable Library options
     $scope.sortableOptions = {
         axis: 'x'
@@ -112,6 +137,8 @@ playerControllers.controller('PlayerController', function($scope, $http) {
 
 
   });
+
+// Hard-coded Data
 
 var playerData = [{
   id: 1,
