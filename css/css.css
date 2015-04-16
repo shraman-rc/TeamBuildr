@@ -102,17 +102,20 @@ span.stars span {
 }
 
 .toolbar{
-	margin:0px !important;
+	/*margin:0px !important;*/
+	margin-left:0px;
+	margin-right:0px;
+	width:100%;
 	padding-top:5px;
 	background-color: #F0F5FF;
 	height:50px;
 }
 
-.toolbar_wrapper {
+/*.toolbar_wrapper {
 	margin:0px !important;
 	width:100vw;
 	padding:-20px;
-}
+}*/
 
 .container-fluid{
 	margin:0px !important;
