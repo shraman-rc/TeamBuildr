@@ -241,8 +241,6 @@ margin:0 auto;
 
 }
 
-
-
 .headername {
 width:auto;
 height:80px;
@@ -257,16 +255,14 @@ height:510px;
 
 .star-rating {
 cursor: default !important;
-transform:scale(0.5);
--moz-transform: scale(0.5);
+transform:scale(0.6);
+-moz-transform: scale(0.6);
 height:0px;
-width:100px;
+width:50px;
 }
-
 
 #rating{
-background-color:green;
-height:0px;
-width:100px;
+	width:100px;
 }
+
 
