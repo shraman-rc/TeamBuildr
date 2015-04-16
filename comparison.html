@@ -98,8 +98,9 @@ Control which recruits you see with search and filter. Drag a recruit to right t
             <div id="name" style="float:left">{{player.name}}</div>
             <div id="rating" style="float:right">{{player.rating}} starz</div>
             <div style="clear:both"></div></div>
-          <div class="list-group-item">
+          <div class="list-group-item2">
                 <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
+                <img class="plus_corner" src="graphics/Add.png" ng-click="addToCompare(player)"/><br>
           </div>
         </div>
       </ul>
