@@ -2,12 +2,12 @@
 <!doctype html>
 <html ng-app="teambuildrApp">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TeamBuildr | Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>TeamBuildr | Home</title>
 
 <!-- <link rel="shortcut icon" href="/graphics/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/graphics/favicon.ico" type="image/x-icon">
- -->
+-->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
@@ -24,128 +24,124 @@
 <style>
 /*body{
   padding-top:50px;
-}*/
-</style>
+  }*/
+  </style>
 </head>
 
 <body>
 
 
-<div ng-app="playerApp" class="row">
+  <div ng-app="playerApp" class="row">
     <div ng-controller="PlayerController">
 
-<!---====================================================================================================================-->
+      <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
-<!---====================================================================================================================-->
+  <!---====================================================================================================================-->
 
   
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.html">TeamBuildr</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="home.html">Table View</a></li>
-                    <li><a href="#">Comparison View</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">TeamBuildr</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="home.html">Table View</a></li>
+          <li><a href="#">Comparison View</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
 
-    <!-- Page Content -->
-    <!-- <div class="container"> -->
-    <div id="comparison_contents">
-        <div id="left_panel">
-        <div id="instructions">
-Control which recruits you see with search and filter. Drag a recruit to right to expand their information to compare multiple recruits at a time.<br>
-        </div>
+  <!-- Page Content -->
+  <!-- <div class="container"> -->
+  <div id="comparison_contents">
+    <div id="left_panel">
+      <div id="instructions">
+        Control which recruits you see with search and filter. Click a recruit to right to expand their information to compare multiple recruits at a time.<br>
+      </div>
 
-        <div id="rest">
+      <div id="rest">
 
         <form id="search-form" role="search">
-            <div class="input-group">
-              <input ng-model="searchText" type="text" class="form-control search-form2" placeholder="Search players by any attribute...">
-              <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
-                  </button>
-              </span>
-            </div>
+          <div class="input-group">
+            <input ng-model="searchText" type="text" class="form-control search-form2" placeholder="Search players by any attribute...">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+          </div>
         </form>
 
-<!-- filter buttons-->
-<h3> filters go here, we need categories for qualifying sat, qualifying gpa, 3+stars, one for each position? </h3>
-<!-- TO DO-->
 
 
 
 
-
-<!-- structure of player card per search result in display-->  
-      <ul ui-sortable ng-model="players"> 
-        <div ng-repeat="player in players | filter: searchText" class="list-group">
-          <div class="list-group-item active" ng-click="addToCompare(player)">
-            <div id="name" style="float:left">{{player.name}}</div>
-            <div id="rating" style="float:right">{{player.rating}} starz</div>
-            <div style="clear:both"></div></div>
-          <div class="list-group-item2">
+        <!-- structure of player card per search result in display-->  
+        <ul ui-sortable ng-model="players"> 
+          <div ng-repeat="player in players | filter: searchText" class="list-group">
+            <div class="list-group-item active" ng-click="addToCompare(player)">
+              <div id="name" style="float:left">{{player.name}}</div>
+              <div id="rating" style="float:right">{{player.rating}} starz</div>
+              <div style="clear:both"></div></div>
+              <div class="list-group-item2">
                 <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
                 <img class="plus_corner" src="graphics/Add.png" ng-click="addToCompare(player)"/><br>
-          </div>
-        </div>
-      </ul>
+              </div>
+            </div>
+          </ul>
 
         </div><!--rest-->
-    </div>
-                    
+      </div>
+      
 
-<!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->    
-        <div id="right_panel">
-            <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
-              <li ng-repeat="player in comparedPlayers" class="list-group">
-                <div class="list-group-item active rightPanelDiv">
-                  <div id="name" style="float:left">{{player.name}}</div>
-                  <div id="rating" style="float:right">{{player.rating}} starz</div>
-                  <div style="clear:both"></div></div>
-                <div class="list-group-item rightPanelDiv">
-                      <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
-                      <img src="graphics/default_profile.png" alt="Profile Failed to Load!">
-                </div>
-              </li>
-            </ul>
+      <!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->    
+      <div id="right_panel">
+        <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
+          <li ng-repeat="player in comparedPlayers" class="list-group">
+            <div class="list-group-item active rightPanelDiv">
+              <div id="name" style="float:left">{{player.name}}</div>
+              <div id="rating" style="float:right">{{player.rating}} starz</div>
+              <div style="clear:both"></div></div>
+              <div class="list-group-item rightPanelDiv">
+                <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
+                <img src="graphics/default_profile.png" alt="Profile Failed to Load!">
+              </div>
+            </li>
+          </ul>
         </div>
 
 
 
-    </div>
-    <!-- </div> -->
-    <!-- /.container -->
+      </div>
+      <!-- </div> -->
+      <!-- /.container -->
 
 
 
 
-<!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
+      <!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
 
-<script type="text/javascript">
-$.fn.stars = function() {
-    return $(this).each(function() {
-        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
-    });
-}
-$(function() {
-    $('span.stars').stars();
-});
-</script>
+      <script type="text/javascript">
+      $.fn.stars = function() {
+        return $(this).each(function() {
+          $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+        });
+      }
+      $(function() {
+        $('span.stars').stars();
+      });
+      </script>
 
-</body>
-</html>
+    </body>
+    </html>
