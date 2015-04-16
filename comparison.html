@@ -35,6 +35,7 @@
 <body>
 
 
+
   <div ng-app="playerApp" class="row">
     <div ng-controller="PlayerController">
 
@@ -85,15 +86,15 @@
               </button>
             </span>
           </div>
-        </form>
+        </form><br>
 
         <!-- Filter buttons -->
         <div id="filterButtons" class="btn-group" role="group" aria-label="...">
           <div id="posFilterBtns" class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default" ng-click="setPosFilter('PG')">PG</button>
-            <button type="button" class="btn btn-default" ng-click="setPosFilter('SF')">SF</button>
-            <button type="button" class="btn btn-default" ng-click="setPosFilter('SG')">SG</button>
-            <button type="button" class="btn btn-default" ng-click="setPosFilter('C')">C</button>
+            <button id="pg" type="button" class="btn btn-default" ng-click="setPosFilter('PG');selected(this);">PG</button>
+            <button id="sf" type="button" class="btn btn-default" ng-click="setPosFilter('SF')">SF</button>
+            <button id="sg" type="button" class="btn btn-default" ng-click="setPosFilter('SG')">SG</button>
+            <button id="c" type="button" class="btn btn-default" ng-click="setPosFilter('C')">C</button>
           </div>
           <div id="GPAFilterBtns" class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default" ng-click="setGPAFilter(1.0)">1.0+</button>
