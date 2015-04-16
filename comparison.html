@@ -149,10 +149,12 @@
               <li ng-repeat="player in comparedPlayers" class="list-group">
                 <div class="list-group-item headername active rightPanelDiv">
                   <div id="name" style="float:left">{{player.name}}</div>
-                   <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
+
+<!--                    <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
+ -->
                   <div style="clear:both"></div></div>
                 <div class="list-group-item playercontents rightPanelDiv">
-                   <img class="profileimg" src="graphics/default_profile.png" alt="Profile Failed to Load!"><br>
+                   <img class="profileimg" src="graphics/default_profile.png" alt="Profile Failed to Load!"><br><br>
                     <strong>GPA: </strong><span id="gpa">{{player.gpa}}</span><br>
                     <strong>SAT: </strong><span id="sat">{{player.sat}}</span><br>
                     <strong>Position: </strong><span class="italics">{{player.position}}</span>

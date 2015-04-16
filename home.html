@@ -149,8 +149,9 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                             <h2 class="modal-title" id="myModalLabel">Recruit Information</h2>
-                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                             <h2 class="modal-title" id="myModalLabel">Recruit Information</h2><br>
+                             <h5 class="modal-title" id="myModalLabel">All information modified will be automatically saved.</h5>
+                             <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button> -->
                          </div>
 
                          <div class="modal-body" id="add_form">
@@ -179,6 +180,7 @@
 
                         </div>
 
+                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="show_btn" value="OK" data-dismiss="modal"/>
 
 
                     </div>
@@ -204,8 +206,14 @@
                          </div>
 
                          <div class="modal-body help-contents">
-                             adsadasdasda
-
+                            Some basic tips:
+                            <ul>
+                             <li> Add new recruits to the table by using the "Add New Recruits" button. </li>
+                             <li>Search through players using the search box. </li> 
+                             <li> Clicking on any field in the top row will sort the table by that field. </li> 
+                             <li> The checkbox on the top row can be used to select all recruits, or select none if all are selected. </li> 
+                             <li> Clicking on a recruit's name will allow editing the recruit's information. </li>
+                             </ul>
 
                          </div>
 
@@ -334,9 +342,9 @@
         </tr>
         <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{success: player.checkmark}">
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
-            <td><a href="#" data-target="#showModal">{{player.name}}</a></td>
+            <td><a href="#" data-target="#showModal" data-toggle="modal" ng-click="setSelected(player)">{{player.name}}</a></td>
             <td>{{player.position}}</td>
-            <td><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></td>
+            <td class="star-sizing"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></td>
             <td>{{player.gpa}}</td>
             <td>{{player.sat}}</td>
         </tr>
