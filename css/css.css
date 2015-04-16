@@ -240,7 +240,7 @@ margin:0 auto;
 
 }
 
-<<<<<<< HEAD
+
 
 .headername {
 width:auto;
@@ -253,8 +253,19 @@ margin:0 auto;
 width:100%;
 height:510px;
 }
-=======
+
 .star-rating {
-	cursor: default !important;
+cursor: default !important;
+transform:scale(0.5);
+-moz-transform: scale(0.5);
+height:0px;
+width:100px;
 }
->>>>>>> 34e19b9ae5b327b4aab63ff77537c52facdd0e43
+
+
+#rating{
+background-color:green;
+height:0px;
+width:100px;
+}
+
