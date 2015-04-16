@@ -47,6 +47,13 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     $scope.GPAState = false;
     $scope.SATState = false;
 
+
+
+    $scope.selected = function(el) {
+      console.log('sigh almost there');
+    }
+
+
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
         gpa:$("#gpa").val(), sat:$("#sat").val(), film:$("#film").val()};
