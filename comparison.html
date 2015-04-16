@@ -1,4 +1,4 @@
-  
+
 <!doctype html>
 <html ng-app="teambuildrApp">
 <head>
@@ -21,6 +21,10 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="js/controller.js"></script>
 <script type="text/javascript" src="js/sortable.js"></script>
+
+<link rel="stylesheet" href="bower_components/bootstrap-star-rating/css/star-rating.min.css">
+<script src="bower_components/bootstrap-star-rating/js/star-rating.min.js"></script>
+
 <style>
 /*body{
   padding-top:50px;
@@ -38,7 +42,7 @@
 <!--    NAVBAR SETUP
   <!---====================================================================================================================-->
 
-  
+
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -87,12 +91,12 @@
 
 
 
-        <!-- structure of player card per search result in display-->  
-        <ul ui-sortable ng-model="players"> 
+        <!-- structure of player card per search result in display-->
+        <ul ui-sortable ng-model="players">
           <div ng-repeat="player in players | filter: searchText" class="list-group">
             <div class="list-group-item active" ng-click="addToCompare(player)">
               <div id="name" style="float:left">{{player.name}}</div>
-              <div id="rating" style="float:right">{{player.rating}} starz</div>
+              <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
               <div style="clear:both"></div></div>
               <div class="list-group-item2">
                 <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
@@ -100,14 +104,20 @@
               </div>
             </div>
           </ul>
+          <script>
+            $(document).ready(function() {
+                $(".clear-rating").remove();
+                $(".caption").remove();
+            });
+          </script>
 
         </div><!--rest-->
       </div>
-      
 
-      <!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->    
+
+      <!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->
       <div id="right_panel">
-        <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
+        <ul id="comparisonList" ui-sortable ng-model="comparedPlayers">
           <li ng-repeat="player in comparedPlayers" class="list-group">
             <div class="list-group-item active rightPanelDiv">
               <div id="name" style="float:left">{{player.name}}</div>

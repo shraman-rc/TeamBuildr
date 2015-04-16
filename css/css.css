@@ -1,8 +1,8 @@
 
 .search-icon {
-position:relative; 
-color: #fff; 
-right: 30px; 
+position:relative;
+color: #fff;
+right: 30px;
 top: 2px;
 }
 
@@ -225,4 +225,8 @@ margin:0 auto;
 	box-shadow: none;
 	padding-bottom:5px;
 
+}
+
+.star-rating {
+	cursor: default !important;
 }
