@@ -212,7 +212,8 @@ margin:0 auto;
 
 .list-group {
 	margin:0 auto;
-	background-color:#E8E8E8;
+	/*background-color:#E8E8E8;*/
+	background-color: white;
 	border-radius:15px;
 	width:90%;
 	margin-top:15px;
@@ -220,7 +221,7 @@ margin:0 auto;
 
 .list-group-item2{
 	margin:0 auto;
-	background-color:#E8E8E8;
+	background-color:white;
 	border-radius:15px;
 	width:90%;
 	margin-top:15px;
