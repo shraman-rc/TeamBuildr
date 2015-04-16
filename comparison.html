@@ -112,25 +112,31 @@
           </script>
 
         </div><!--rest-->
-      </div>
 
+    </div>
+                    
 
-      <!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->
-      <div id="right_panel">
-        <ul id="comparisonList" ui-sortable ng-model="comparedPlayers">
-          <li ng-repeat="player in comparedPlayers" class="list-group">
-            <div class="list-group-item active rightPanelDiv">
-              <div id="name" style="float:left">{{player.name}}</div>
-              <div id="rating" style="float:right">{{player.rating}} starz</div>
-              <div style="clear:both"></div></div>
-              <div class="list-group-item rightPanelDiv">
-                <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
-                <img src="graphics/default_profile.png" alt="Profile Failed to Load!">
-              </div>
-            </li>
-          </ul>
+<!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->   
+<div> 
+        <div id="right_panel">
+            <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
+              <li ng-repeat="player in comparedPlayers" class="list-group">
+                <div class="list-group-item headername active rightPanelDiv">
+                  <div id="name" style="float:left">{{player.name}}</div>
+                  <div id="rating" style="float:right">{{player.rating}} starz</div>
+                  <div style="clear:both"></div></div>
+                <div class="list-group-item playercontents rightPanelDiv">
+                   <img class="profileimg" src="graphics/default_profile.png" alt="Profile Failed to Load!"><br>
+                    <strong>GPA: </strong><span id="gpa">{{player.gpa}}</span><br>
+                    <strong>SAT: </strong><span id="sat">{{player.sat}}</span><br>
+                    <strong>Position: </strong><span class="italics">{{player.position}}</span>
+
+                </div>
+              </li>
+            </ul>
+
         </div>
-
+</div>
 
 
       </div>
