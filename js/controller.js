@@ -1,7 +1,9 @@
+// App module
+
 var teambuildrApp = angular.module('teambuildrApp', [
   'ngRoute',
   'playerControllers',
-  'ui.sortable'
+  'ui.sortable',
 ]);
 
 // Routes
@@ -34,6 +36,16 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     $scope.players = playerData;
     $scope.selectedPlayer = $scope.players[0];
     $scope.comparedPlayers = [];
+
+    // Filter attributes
+    $scope.posFilter = null;
+    $scope.minGPA = 0.0;
+    $scope.minSAT = 0;
+
+    // Filter state (true = pressed, false = unpressed)
+    $scope.posState = false;
+    $scope.GPAState = false;
+    $scope.SATState = false;
 
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
@@ -102,6 +114,41 @@ playerControllers.controller('PlayerController', function($scope, $http) {
       }
     }
 
+    $scope.compareFilter = function(player) {
+      var validPos = $scope.posFilter == null || player.position == $scope.posFilter;
+      return validPos && player.gpa >= $scope.minGPA && player.sat >= $scope.minSAT;
+    }
+
+    $scope.setPosFilter = function(pos){
+      if($scope.posState){
+        $scope.posFilter = null;
+        $scope.posState = false;
+      } else {
+        $scope.posFilter = pos;
+        $scope.posState = true;
+      }
+    }
+
+    $scope.setGPAFilter = function(GPA){
+      if($scope.GPAState){
+        $scope.minGPA = 0.0;
+        $scope.GPAState = false;
+      } else {
+        $scope.minGPA = GPA;
+        $scope.GPAState = true;
+      }
+    }
+
+    $scope.setSATFilter = function(SAT){
+      if($scope.SATState){
+        $scope.minSAT = 0;
+        $scope.SATState = false;
+      } else {
+        $scope.minSAT = SAT;
+        $scope.SATState = true;
+      }
+    }
+
     // UI-Sortable Library options
     $scope.sortableOptions = {
         axis: 'x'
@@ -112,6 +159,8 @@ playerControllers.controller('PlayerController', function($scope, $http) {
 
 
   });
+
+// Hard-coded Data
 
 var playerData = [{
   id: 1,
