@@ -1,40 +1,43 @@
 <!doctype html>
 <html ng-app="teambuildrApp">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TeamBuildr | Home</title>
- 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
-<script src="js/bootstrap.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/css.css"/>
-<script src="js/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="js/controller.js"></script>
-<script type="text/javascript" src="js/sortable.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TeamBuildr | Home</title>
 
-<style>
-body{
-  padding-top:70px;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <script src="js/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/controller.js"></script>
+    <script type="text/javascript" src="js/sortable.js"></script>
+
+    <link rel="stylesheet" href="bower_components/bootstrap-star-rating/css/star-rating.min.css">
+    <script src="bower_components/bootstrap-star-rating/js/star-rating.min.js"></script>
+
+    <style>
+    body{
+      padding-top:70px;
+  }
+  </style>
 
 </head>
- 
+
 <body>
-        <div ng-app="playerApp" class="row">
-            <div ng-controller="PlayerController">
- 
-<!---====================================================================================================================-->
+    <div ng-app="playerApp" class="row">
+        <div ng-controller="PlayerController">
+
+            <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
-<!---====================================================================================================================-->
- 
- 
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!---====================================================================================================================-->
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -51,64 +54,313 @@ body{
                 <ul class="nav navbar-nav">
                     <li><a href="#">Table View</a></li>
                     <li><a href="comparison.html">Comparison View</a></li>
- 
- 
-<!---====================================================================================================================-->
+
+
+                    <!---====================================================================================================================-->
 <!-- EMAIL PLAYERS
-<!---====================================================================================================================-->
- 
- 
-          <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
- 
- 
-          <!--register bootstrap--></li>
- 
- 
-                </ul>
- 
-<!---====================================================================================================================-->
+    <!---====================================================================================================================-->
+
+
+    <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
+
+
+      <!--register bootstrap--></li>
+
+
+  </ul>
+
+  <!---====================================================================================================================-->
 <!-- SEARCH BAR
-<!---====================================================================================================================-->
- 
- 
- 
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
- 
-    <!-- Page Content -->
-    <div class="container">
-<!---====================================================================================================================-->
+    <!---====================================================================================================================-->
+
+
+
+</div>
+<!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <!---====================================================================================================================-->
 <!-- INTERCHANGEABLE VIEWS
-<!---====================================================================================================================-->
-                <div ng-view></div>
+    <!---====================================================================================================================-->
+
+
+
+    <div>
+
+        <script>
+        console.log("loading");
+        </script>
+        <!---====================================================================================================================-->
+                <!-- EMAIL
+                <!---====================================================================================================================-->
+
+                <form ng-submit="emailSubmit();" id="emailmod"><div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                             <h2 class="modal-title" id="myModalLabel">Email Selected Players</h2>
+                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                         </div>
+
+                         <div class="modal-body" id="email_form">
+
+                          <div id="mail_to">Mail to: <input type="text" class="form-control inp" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
+                          <hr>
+
+                          <div id="subject_for" for="subject">Subject: <input type="text" class="form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
+
+                          <hr>
+
+                          <div for="message">Message:</div>
+                          <hr>
+
+
+                          <textarea type="text" class="form-control" name="message" id="message" placeholder="body"></textarea></br>
+
+                          <input type="submit" name="submit" class="signupbutton button2 btn-large" id="send_btn" value="Send!" />
+
+                      </div>
+
+                      <div id='signupmessage1' class="hidden" style="color:black;text-align:center"></br><h3>Registration form submitted!</h3><br><br></div>
+
+
+                  </div>
+              </div>
+          </div></form>
+          <!-- <iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe> -->
+
+
+
+
+
+
+          <!---====================================================================================================================-->
+                <!-- SHOW PLAYERS
+                <!---====================================================================================================================-->
+
+
+
+
+                <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                             <h2 class="modal-title" id="myModalLabel">Recruit Information</h2>
+                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                         </div>
+
+                         <div class="modal-body" id="add_form">
+                            <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
+                            <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
+
+
+                            <div class="form-group">
+                              <label for="sel1">Position:</label>
+                              <select class="form-control inp" ng-model="selectedPlayer.position">
+                                <option>C</option>
+                                <option>SF</option>
+                                <option>PF</option>
+                                <option>PG</option>
+                                <option>SG</option>
+
+                            </select>
+                        </div>
+
+                        <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
+                        </div>
+                        <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
+                        </div>
+
+                        <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!---====================================================================================================================-->
+                <!-- HELP MODAL
+                <!---====================================================================================================================-->
+
+
+                <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                             <h2 class="modal-title" id="myModalLabel">Help</h2>
+                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                         </div>
+
+                         <div class="modal-body help-contents">
+                             adsadasdasda
+
+
+                         </div>
+
+                         <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+                     </div>
+                 </div>
+             </div>
+
+
+
+
+
+
+
+             <!-- <div class="container-fluid"> -->
+             <!-- <div class="toolbar_wrapper"> -->
+             <form class="form-inline toolbar">
+                <a href="#" data-target="#addModal" id="add_players" data-toggle="modal">
+                  <img id="addbutton" src="graphics/Add.png"> Add New Recruit
+              </a>
+
+              <form id="search-form" role="search">
+                <div class="input-group">
+                  <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
+                  <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
+                      </button>
+                  </span>
+
+              </div>
+
+
+              <a href="#" data-target="#helpModal" id="help" data-toggle="modal">
+                  <img id="addbutton" src="graphics/help.png">
+              </a>
+          </form>
+
+      </form>
+      <!-- </div> -->
+      <!-- </div> -->
+      <hr>
+
+
+
+
+
+
+
+
+
+
+
+      <!---====================================================================================================================-->
+                <!-- ADD PLAYERS
+                <!---====================================================================================================================-->
+
+
+
+                <form ng-submit="addPlayer()"><div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                             <h2 class="modal-title" id="myModalLabel">Add a New Recruit</h2>
+                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                         </div>
+
+                         <div class="modal-body" id="add_form">
+                            <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" id="name" placeholder="John Doe"><br></div>
+                            <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" id="email_addr" placeholder="john@gmail.com"><br>  </div>
+
+
+                            <div class="form-group">
+                              <label for="sel1">Position:</label>
+                              <select class="form-control inp" id="position">
+                                <option>C</option>
+                                <option>SF</option>
+                                <option>PF</option>
+                                <option>PG</option>
+                                <option>SG</option>
+
+                            </select>
+                        </div>
+
+                        <!-- <div id="slider"></div> -->
+                        <div class="form-group">
+                          <label for="sel1">Rating:</label>
+                          <select class="form-control inp" id="rating">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+
+
+                    <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" id="gpa" placeholder="4.0"><br>
+                    </div>
+                    <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" id="sat" placeholder="1600"><br>
+                    </div>
+
+                    <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" id="film" placeholder="youtube.com/..."><br>
+
+                    </div>
+
+                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="add_btn" value="Add Player" />
+
+                </div>
+
+                <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
+            </div>
+        </div>
+    </div></form>
+    <!-- <iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe> -->
+
+    <table id="player-table" class="table table-bordered">
+
+        <tr class="active">
+            <td><input type="checkbox" id="all_check" ng-model="allChecked" ng-click="checkAll()" /></td>
+            <td><a href="" ng-click="predicate = 'name'; reverse=!reverse">Name<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'name' && reverse, 'glyphicon-chevron-down': predicate == 'name' && !reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'position'; reverse=!reverse">Position<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'position' && reverse, 'glyphicon-chevron-down': predicate == 'position' && !reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'rating'; reverse=!reverse">Rating<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'rating' && !reverse, 'glyphicon-chevron-down': predicate == 'rating' && reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'gpa'; reverse=!reverse">GPA<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'gpa' && !reverse, 'glyphicon-chevron-down': predicate == 'gpa' && reverse}"></span></font></td>
+            <td><a href="" ng-click="predicate = 'sat'; reverse=!reverse">SAT<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'sat' && !reverse, 'glyphicon-chevron-down': predicate == 'sat' && reverse}"></span></font></td>
+        </tr>
+        <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{success: player.checkmark}">
+            <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
+            <td><a href="#" data-target="#showModal">{{player.name}}</a></td>
+            <td>{{player.position}}</td>
+            <td><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></td>
+            <td>{{player.gpa}}</td>
+            <td>{{player.sat}}</td>
+        </tr>
+    </table>
+    <script>
+        $(document).ready(function() {
+            $(".clear-rating").remove();
+        });
+    </script>
+</div>
 
 
 <!---====================================================================================================================-->
 
 <!-- U N R E F A C T O R E D
 
-<!---====================================================================================================================-->
+    <!---====================================================================================================================-->
+
+</div>
+<!-- /.container -->
 
 
-
-
-
-
-<!---====================================================================================================================-->
-
-<!-- U N R E F A C T O R E D
-
-<!---====================================================================================================================-->
- 
-    </div>
-    <!-- /.container -->
- 
- 
 <!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
- 
+
 <script type="text/javascript">
 $.fn.stars = function() {
     return $(this).each(function() {
@@ -119,6 +371,6 @@ $(function() {
     $('span.stars').stars();
 });
 </script>
- 
+
 </body>
 </html>
