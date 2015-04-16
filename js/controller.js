@@ -4,7 +4,6 @@ var teambuildrApp = angular.module('teambuildrApp', [
   'ngRoute',
   'playerControllers',
   'ui.sortable',
-  'playerFilters'
 ]);
 
 // Routes
@@ -42,6 +41,11 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     $scope.posFilter = null;
     $scope.minGPA = 0.0;
     $scope.minSAT = 0;
+
+    // Filter state (true = pressed, false = unpressed)
+    $scope.posState = false;
+    $scope.GPAState = false;
+    $scope.SATState = false;
 
     $scope.addPlayer = function() {
       var player = {name:$("#name").val(), email:$("#email_addr").val(), checkmark:false, position:$("#position").val(), rating:$("#rating").val(),
@@ -116,15 +120,33 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     }
 
     $scope.setPosFilter = function(pos){
-      $scope.posFilter = pos;
+      if($scope.posState){
+        $scope.posFilter = null;
+        $scope.posState = false;
+      } else {
+        $scope.posFilter = pos;
+        $scope.posState = true;
+      }
     }
 
     $scope.setGPAFilter = function(GPA){
-      $scope.minGPA = GPA;
+      if($scope.GPAState){
+        $scope.minGPA = 0.0;
+        $scope.GPAState = false;
+      } else {
+        $scope.minGPA = GPA;
+        $scope.GPAState = true;
+      }
     }
 
     $scope.setSATFilter = function(SAT){
-      $scope.minSAT = SAT;
+      if($scope.SATState){
+        $scope.minSAT = 0;
+        $scope.SATState = false;
+      } else {
+        $scope.minSAT = SAT;
+        $scope.SATState = true;
+      }
     }
 
     // UI-Sortable Library options
