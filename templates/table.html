@@ -244,7 +244,7 @@ console.log("loading");
             <td><a href="" ng-click="predicate = 'gpa'; reverse=!reverse">GPA<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'gpa' && !reverse, 'glyphicon-chevron-down': predicate == 'gpa' && reverse}"></span></font></td>
             <td><a href="" ng-click="predicate = 'sat'; reverse=!reverse">SAT<font size="1"><span class="glyphicon" ng-class="{'glyphicon-chevron-up': predicate == 'sat' && !reverse, 'glyphicon-chevron-down': predicate == 'sat' && reverse}"></span></font></td>
         </tr>
-        <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{success: player.checkmark}">
+        <tr ng-repeat="player in players | filter:searchText | orderBy:predicate:reverse" ng-class="{hilightedrow: player.checkmark}">
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
             <td><a href="#" data-target="#showModal">{{player.name}}</a></td>
             <td>{{player.position}}</td>
