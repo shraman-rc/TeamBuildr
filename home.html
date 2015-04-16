@@ -336,7 +336,7 @@
             <td><input type="checkbox" ng-model="player.checkmark" ng-click="check(player)" /></td>
             <td><a href="#" data-target="#showModal">{{player.name}}</a></td>
             <td>{{player.position}}</td>
-            <td><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></td>
+            <td class="star-sizing"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></td>
             <td>{{player.gpa}}</td>
             <td>{{player.sat}}</td>
         </tr>
