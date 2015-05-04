@@ -34,7 +34,7 @@ var playerControllers = angular.module('playerControllers', []);
 playerControllers.controller('PlayerController', function($scope, $http) {
 
     $scope.players = playerData;
-    $scope.editedPlayer = $scope.players[0];
+    $scope.selectedPlayer = $scope.players[0];
     $scope.editedPlayer = null;
     $scope.comparedPlayers = [];
 
@@ -119,6 +119,11 @@ playerControllers.controller('PlayerController', function($scope, $http) {
       $scope.selectedPlayer.name = $scope.editedPlayer.name;
       $scope.selectedPlayer.email = $scope.editedPlayer.email;
       $scope.selectedPlayer.gpa = $scope.editedPlayer.gpa;
+      $scope.selectedPlayer.sat = $scope.editedPlayer.sat;
+      $scope.selectedPlayer.film = $scope.editedPlayer.film;
+      $scope.selectedPlayer.position = $scope.editedPlayer.position;
+      $scope.selectedPlayer.rating = $scope.editedPlayer.rating;
+      $('.modal').modal('hide');
     };
 
     // $scope.setDraggedPlayer = function(player){
