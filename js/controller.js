@@ -34,7 +34,8 @@ var playerControllers = angular.module('playerControllers', []);
 playerControllers.controller('PlayerController', function($scope, $http) {
 
     $scope.players = playerData;
-    $scope.selectedPlayer = $scope.players[0];
+    $scope.editedPlayer = $scope.players[0];
+    $scope.editedPlayer = null;
     $scope.comparedPlayers = [];
 
     // Filter attributes
@@ -74,7 +75,7 @@ playerControllers.controller('PlayerController', function($scope, $http) {
     $scope.emailSubmit = function(){
       console.log("happening");
       $('.modal').modal('hide');
-    }
+    };
 
     $scope.removePlayer = function(player) {
       $scope.players.remove(player);
@@ -109,7 +110,16 @@ playerControllers.controller('PlayerController', function($scope, $http) {
 
     $scope.setSelected = function(player) {
       $scope.selectedPlayer = player;
-    }
+      var player2 = {name:player.name, email:player.email, checkmark:false, position:player.position, rating:player.rating,
+        gpa:player.gpa, sat:player.sat, film:player.film};
+      $scope.editedPlayer = player2;
+    };
+
+    $scope.editPlayer = function() {
+      $scope.selectedPlayer.name = $scope.editedPlayer.name;
+      $scope.selectedPlayer.email = $scope.editedPlayer.email;
+      $scope.selectedPlayer.gpa = $scope.editedPlayer.gpa;
+    };
 
     // $scope.setDraggedPlayer = function(player){
     //   $scope.draggedPlayer = player;
@@ -119,12 +129,12 @@ playerControllers.controller('PlayerController', function($scope, $http) {
       if($scope.comparedPlayers.indexOf(player) === -1){
         $scope.comparedPlayers.push(player);
       }
-    }
+    };
 
     $scope.compareFilter = function(player) {
       var validPos = $scope.posFilter == null || player.position == $scope.posFilter;
       return validPos && player.gpa >= $scope.minGPA && player.sat >= $scope.minSAT;
-    }
+    };
 
     $scope.setPosFilter = function(pos){
       if($scope.posState){

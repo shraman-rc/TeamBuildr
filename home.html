@@ -145,7 +145,7 @@
 
 
 
-                <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
+                <form ng-submit="editPlayer()"><div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModal" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -155,13 +155,13 @@
                          </div>
 
                          <div class="modal-body" id="add_form">
-                            <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="selectedPlayer.name"><br></div>
-                            <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="selectedPlayer.email"><br>  </div>
+                            <div><label for="name">Name: </label><input type="text" class="form-control inp" name="name" placeholder="John Doe" ng-model="editedPlayer.name"><br></div>
+                            <div><label for="email">Email: </label><input type="text" class="form-control inp" name="email_addr" placeholder="john@gmail.com" ng-model="editedPlayer.email"><br>  </div>
 
 
                             <div class="form-group">
                               <label for="sel1">Position:</label>
-                              <select class="form-control inp" ng-model="selectedPlayer.position">
+                              <select class="form-control inp" ng-model="editedPlayer.position">
                                 <option>C</option>
                                 <option>SF</option>
                                 <option>PF</option>
@@ -171,16 +171,16 @@
                             </select>
                         </div>
 
-                        <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" placeholder="4.0" ng-model="selectedPlayer.gpa"><br>
+                        <div><label for="gpa">GPA: </label><input type="text" class="form-control inp" name="gpa" placeholder="4.0" ng-model="editedPlayer.gpa"><br>
                         </div>
-                        <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="selectedPlayer.sat"><br>
-                        </div>
-
-                        <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="selectedPlayer.film"><br>
-
+                        <div><label for="sat">SAT: </label> <input type="text" class="form-control inp" name="sat" placeholder="1600" ng-model="editedPlayer.sat"><br>
                         </div>
 
-                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="show_btn" value="OK" data-dismiss="modal"/>
+                        <div><label for="film">Film Link:  </label><input type="text" class="form-control inp" name="film" placeholder="youtube.com/..." ng-model="editedPlayer.film"><br>
+
+                        </div>
+
+                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="show_btn" value="Submit" data-dismiss="modal"/>
 
 
                     </div>
@@ -188,7 +188,7 @@
                     <div id='addedsuccess' class="hidden" style="color:black;text-align:center"></br><h3>Recruit information submitted!</h3><br><br></div>
                 </div>
             </div>
-        </div>
+        </div></form>
 
 
 
