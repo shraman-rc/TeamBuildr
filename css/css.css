@@ -8,7 +8,7 @@ top: 2px;
 
 .search-form {
 border-radius: 30px 0px 0px 30px;
-width:60vw !important;
+width:45vw !important;
 margin-left:40px;
 
     /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
@@ -45,24 +45,12 @@ border-color:#D8D8D8 ;
 border-radius:10px;
 }
 
-.close {
-	border: 0;
-	color: black;
-	display: block;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 100;
-	font-size: 2em;
-	padding: 1.5vw;
-	position: absolute;
-	top: 3vh;
-	right: 3vw;
-}
 
 #addbutton{
 	width:40px;
 	height:auto;
 	margin-left:30px;
-	box-shadow: none;
+	box-shadow: none !important;
 }
 
 .submit_btn {
@@ -109,6 +97,7 @@ span.stars span {
 	padding-top:5px;
 	background-color: #F0F5FF;
 	height:50px;
+	box-shadow:none !important;
 }
 
 /*.toolbar_wrapper {
@@ -239,7 +228,7 @@ margin:0 auto;
 	height:auto;
 	float:right;
 	margin-bottom:10px;
-	box-shadow: none;
+	box-shadow: none !important;
 	padding-bottom:5px;
 
 }
@@ -286,9 +275,42 @@ width: 150px;
 }
 
 
+#toolbarbuttongeneral {
+	width:40px;
+	height:auto;
+	margin-left:30px;
+	box-shadow: none !important;
+}
+
 #addbutton2 {
 	width:40px;
 	height:auto;
 	margin-left:100px;
-	box-shadow: none;
+	box-shadow: none !important;
 }
+
+
+.close {
+	border: 0;
+	color: black;
+	display: block;
+	font-weight: 300;
+	font-size: 2.2em;
+	margin:0.3vw;
+	margin-top:0.3vw;
+	background-color: transparent;
+	position: absolute;
+	top: 3vh;
+	right: 3vw;
+	opacity:0.9;
+
+}
+
+ .uniform_margins {
+ 	margin-left:3px !important;
+ }
+
+ .modal-dialog {
+ 	width:800px;
+ }
+

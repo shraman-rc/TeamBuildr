@@ -52,7 +52,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Table View</a></li>
+                    <li class="active"><a href="#" class="active">Table View</a></li>
                     <li><a href="comparison.html">Comparison View</a></li>
 
 
@@ -61,11 +61,11 @@
     <!---====================================================================================================================-->
 
 
-    <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
+ <!--    <li><a href="#" data-toggle="modal" class="special" id="email" ng-click="loadEmails();" data-target="#emailModal">Email Selected Players</a>
 
 
-      <!--register bootstrap--></li>
-
+      </li>
+ -->
 
   </ul>
 
@@ -108,10 +108,18 @@
 
                          <div class="modal-body" id="email_form">
 
-                          <div id="mail_to">Mail to: <input type="text" class="form-control inp" name="mailto" id="mailto" placeholder="mail to"><br>  </div>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            Mail to:
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class=" uniform_margins form-control inp" name="mailto" id="mailto" placeholder="mail to"><br> 
+                          </div>
+                        </form>
+      
                           <hr>
 
-                          <div id="subject_for" for="subject">Subject: <input type="text" class="form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
+                          <div id="subject_for" for="subject">Subject: <input type="text" class=" uniform_margins form-control inp" name="subject" id="subject" placeholder="subject"></br></div>
 
                           <hr>
 
@@ -119,9 +127,9 @@
                           <hr>
 
 
-                          <textarea type="text" class="form-control" name="message" id="message" placeholder="body"></textarea></br>
-
-                          <input type="submit" name="submit" class="signupbutton button2 btn-large" id="send_btn" value="Send!" />
+                          <textarea type="text" class="form-control uniform_margins" name="message" id="message" placeholder="body"></textarea></br>
+                        
+                          <input type="submit" name="submit" class="submit_btn btn-large" id="send_btn" value="Send!" />
 
                       </div>
 
@@ -180,7 +188,8 @@
 
                         </div>
 
-                    <input type="submit" name="submit" class="submit_btn button2 btn-large" id="show_btn" value="Submit" data-dismiss="modal"/>
+
+                    <input type="submit" name="submit" class="submit_btn" id="show_btn" value="Submit changes" data-dismiss="modal"/>
 
 
                     </div>
@@ -233,11 +242,12 @@
              <form class="form-inline toolbar">
                 <a href="#" data-target="#addModal" id="add_players" data-toggle="modal">
                   <img id="addbutton2" src="graphics/Add.png"> Add New Recruit
-              </a>
+                </a>
+                <a href="#" data-toggle="modal" id="email" ng-click="loadEmails();" data-target="#emailModal"><img id="toolbarbuttongeneral" src="graphics/Email copy.png">Email Selected Players</a>
 
               <form id="search-form" role="search">
                 <div class="input-group">
-                  <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players...">
+                  <input ng-model="searchText" type="text" class="form-control search-form" placeholder="Search players by any attribute; Results will update on table...">
                   <span class="input-group-btn">
                       <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
                       </button>
