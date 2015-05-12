@@ -1,31 +1,26 @@
-
 <!doctype html>
 <html ng-app="teambuildrApp">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>TeamBuildr | Home</title>
 
-<!-- <link rel="shortcut icon" href="/graphics/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/graphics/favicon.ico" type="image/x-icon">
--->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/css.css"/>
+  <script src="js/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/controller.js"></script>
+  <script type="text/javascript" src="js/sortable.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
-<script src="js/bootstrap.min.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/css.css"/>
-<script src="js/angular.min.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="js/controller.js"></script>
-<script type="text/javascript" src="js/sortable.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap-star-rating/css/star-rating.min.css">
+  <script src="bower_components/bootstrap-star-rating/js/star-rating.min.js"></script>
 
-<link rel="stylesheet" href="bower_components/bootstrap-star-rating/css/star-rating.min.css">
-<script src="bower_components/bootstrap-star-rating/js/star-rating.min.js"></script>
-
-<style>
+  <style>
 /*body{
   padding-top:50px;
   }*/
@@ -39,44 +34,44 @@
   <div ng-app="playerApp" class="row">
     <div ng-controller="PlayerController">
 
-<!---====================================================================================================================-->
+        <!---====================================================================================================================-->
 <!--    NAVBAR SETUP
-<!---====================================================================================================================-->
+    <!---====================================================================================================================-->
 
 
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="home.html">TeamBuildr</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home.html">TeamBuildr</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="home.html">Table View</a></li>
           <li class="active"><a href="#">Comparison View</a></li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-  </nav>
+      </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
 
-  <!-- Page Content -->
-  <!-- <div class="container"> -->
-  <div id="comparison_contents">
+<!-- Page Content -->
+<!-- <div class="container"> -->
+<div id="comparison_contents">
     <div id="left_panel">
       <div id="instructions">
         Control which recruits you see with search and filter. Click a recruit to right to expand their information to compare multiple recruits at a time.<br>
-      </div>
+    </div>
 
-      <div id="rest">
+    <div id="rest">
 
         <form id="search-form" role="search">
           <div class="input-group">
@@ -84,116 +79,114 @@
             <span class="input-group-btn">
               <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
               </button>
-            </span>
-          </div>
-        </form><br>
+          </span>
+      </div>
+  </form><br>
 
-        <!-- Filter buttons -->
-        <div id="filterButtons" class="btn-group btn-group-justified" role="group" aria-label="...">
-          <div id="posFilterBtns" class="btn-group" role="group" aria-label="...">
-            <button id="pg" type="button" class="btn btn-default" ng-click="setPosFilter('PG');selected(this);">PG</button>
-            <button id="sf" type="button" class="btn btn-default" ng-click="setPosFilter('SF')">SF</button>
-            <button id="sg" type="button" class="btn btn-default" ng-click="setPosFilter('SG')">SG</button>
-            <button id="c" type="button" class="btn btn-default" ng-click="setPosFilter('C')">C</button>
-          </div>
-          <div id="GPAFilterBtns" class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(1.0)">1.0+</button>
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(2.0)">2.0+</button>
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(2.5)">2.5+</button>
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(3.0)">3.0+</button>
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(3.5)">3.5+</button>
-            <button type="button" class="btn btn-default" ng-click="setGPAFilter(4.0)">4.0</button>
-          </div>
-          <div id="SATFilterBtns" class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(400)">400+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(800)">800+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1000)">1000+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1200)">1200+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1300)">1300+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1400)">1400+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1450)">1450+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1500)">1500+</button>
-            <button type="button" class="btn btn-default" ng-click="setSATFilter(1550)">1550+</button>
-          </div>
-
-        </div>
-
-        <div>
-            <rzslider rz-slider-model="priceSlider"></rzslider>
-        </div>
-
-
-        <!-- structure of player card per search result in display-->  
-        <ul ui-sortable ng-model="players"> 
-          <div ng-repeat="player in players | filter:compareFilter | filter:searchText" class="list-group">
-            <div class="list-group-item active" ng-click="addToCompare(player)">
-              <div id="name" style="float:left">{{player.name}}</div>
-              <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
-              <div style="clear:both"></div></div>
-              <div class="list-group-item2">
-                <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
-                <img class="plus_corner" src="graphics/Add.png" ng-click="addToCompare(player)"/><br>
-              </div>
-            </div>
-          </ul>
-          <script>
-            $(document).ready(function() {
-                $(".clear-rating").remove();
-                $(".caption").remove();
-            });
-          </script>
-
-        </div><!--rest-->
-
-    </div>
-                    
-
-<!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->   
-<div> 
-        <div id="right_panel">
-            <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
-              <li ng-repeat="player in comparedPlayers" class="list-group">
-                <div class="list-group-item headername active rightPanelDiv">
-                  <div id="name" style="float:left">{{player.name}}</div>
-
-<!--                    <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
- -->
-                  <div style="clear:both"></div></div>
-                <div class="list-group-item playercontents rightPanelDiv">
-                   <img class="profileimg" src="graphics/default_profile.png" alt="Profile Failed to Load!"><br><br>
-                    <strong>GPA: </strong><span id="gpa">{{player.gpa}}</span><br>
-                    <strong>SAT: </strong><span id="sat">{{player.sat}}</span><br>
-                    <strong>Position: </strong><span class="italics">{{player.position}}</span>
-
-                </div>
-              </li>
-            </ul>
-
-        </div>
+  <!-- Filter buttons -->
+<div id="posFilterBtns" class="btn-group" role="group" aria-label="...">
+    <button id="pg" type="button" class="btn btn-default" data-toggle="button" ng-click="setPosFilter('PG');selected(this);">PG</button>
+    <button id="sf" type="button" class="btn btn-default" data-toggle="button" ng-click="setPosFilter('SF')">SF</button>
+    <button id="sg" type="button" class="btn btn-default" data-toggle="button" ng-click="setPosFilter('SG')">SG</button>
+    <button id="c" type="button" class="btn btn-default" data-toggle="button" ng-click="setPosFilter('C')">C</button>
+</div>
+<div id="GPAFilterBtns" class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(1.0)">1.0+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(2.0)">2.0+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(2.5)">2.5+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(3.0)">3.0+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(3.5)">3.5+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setGPAFilter(4.0)">4.0</button>
+</div>
+<div id="SATFilterBtns" class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(400)">400+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(800)">800+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1000)">1000+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1200)">1200+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1300)">1300+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1400)">1400+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1450)">1450+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1500)">1500+</button>
+    <button type="button" class="btn btn-default" data-toggle="button" ng-click="setSATFilter(1550)">1550+</button>
 </div>
 
 
-      </div>
-      <!-- </div> -->
-      <!-- /.container -->
+<div>
+    <rzslider rz-slider-model="priceSlider"></rzslider>
+</div>
+
+
+<!-- structure of player card per search result in display-->  
+<ul ui-sortable ng-model="players"> 
+  <div ng-repeat="player in players | filter:compareFilter | filter:searchText" class="list-group">
+    <div class="list-group-item active" ng-click="addToCompare(player)">
+      <div id="name" style="float:left">{{player.name}}</div>
+      <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
+      <div style="clear:both"></div></div>
+      <div class="list-group-item2">
+        <span id="gpa">{{player.gpa}}</span> GPA, <span id="sat">{{player.sat}}</span> SAT<br><span class="italics">{{player.position}}</span>
+        <img class="plus_corner" src="graphics/Add.png" ng-click="addToCompare(player)"/><br>
     </div>
-  </div>
+</div>
+</ul>
+<script>
+$(document).ready(function() {
+    $(".clear-rating").remove();
+    $(".caption").remove();
+});
+</script>
+
+</div><!--rest-->
+
+</div>
+
+
+<!-- THE RIGHT SIDE OF THE PAGE, DRAGGING GOES HERE-->   
+<div> 
+    <div id="right_panel">
+        <ul id="comparisonList" ui-sortable ng-model="comparedPlayers"> 
+          <li ng-repeat="player in comparedPlayers" class="list-group">
+            <div class="list-group-item headername active rightPanelDiv">
+              <div id="name" style="float:left">{{player.name}}</div>
+
+<!--                    <div id="rating" style="float:right"><input id="input-id" type="number" class="rating" min=0 max=5 step={{player.rating}} data-size="xs" data-readOnly="true" data-showClear="false" value={{player.rating}} /></div>
+-->
+<div style="clear:both"></div></div>
+<div class="list-group-item playercontents rightPanelDiv">
+ <img class="profileimg" src="graphics/default_profile.png" alt="Profile Failed to Load!"><br><br>
+ <strong>GPA: </strong><span id="gpa">{{player.gpa}}</span><br>
+ <strong>SAT: </strong><span id="sat">{{player.sat}}</span><br>
+ <strong>Position: </strong><span class="italics">{{player.position}}</span>
+
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+
+
+</div>
+<!-- </div> -->
+<!-- /.container -->
+</div>
+</div>
 
 
 
 
-      <!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
+<!-- from http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css -->
 
-      <script type="text/javascript">
-      $.fn.stars = function() {
-        return $(this).each(function() {
-          $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
-        });
-      }
-      $(function() {
-        $('span.stars').stars();
-      });
-      </script>
+<script type="text/javascript">
+$.fn.stars = function() {
+    return $(this).each(function() {
+      $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+  });
+}
+$(function() {
+    $('span.stars').stars();
+});
+</script>
 
-    </body>
-    </html>
+</body>
+</html>
