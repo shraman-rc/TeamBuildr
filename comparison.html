@@ -60,7 +60,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="home.html">Table View</a></li>
-          <li><a href="#">Comparison View</a></li>
+          <li class="active"><a href="#">Comparison View</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -80,7 +80,7 @@
 
         <form id="search-form" role="search">
           <div class="input-group">
-            <input ng-model="searchText" type="text" class="form-control search-form2" placeholder="Search players by any attribute...">
+            <input ng-model="searchText" type="text" class="form-control search-form2" placeholder="as.">
             <span class="input-group-btn">
               <button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="search_form"><i class="glyphicon glyphicon-search"></i>
               </button>
@@ -89,7 +89,7 @@
         </form><br>
 
         <!-- Filter buttons -->
-        <div id="filterButtons" class="btn-group" role="group" aria-label="...">
+        <div id="filterButtons" class="btn-group btn-group-justified" role="group" aria-label="...">
           <div id="posFilterBtns" class="btn-group" role="group" aria-label="...">
             <button id="pg" type="button" class="btn btn-default" ng-click="setPosFilter('PG');selected(this);">PG</button>
             <button id="sf" type="button" class="btn btn-default" ng-click="setPosFilter('SF')">SF</button>
